@@ -21,14 +21,13 @@ const sizeStyles: Record<CardSize, string> = {
 
 const variantStyles: Record<CardVariant, string> = {
   default: `
-    bg-white/80
+    bg-[hsl(var(--color-elevated))]
     border border-[hsl(var(--color-border))/0.6]
-    backdrop-blur-sm
   `,
   elevated: `
-    bg-white/80
-    shadow-lg shadow-[#0052FF]/8
-    backdrop-blur-sm
+    bg-[hsl(var(--color-elevated))]
+    shadow-md
+    border border-[hsl(var(--color-border))/0.4]
   `,
   outlined: `
     bg-transparent
@@ -57,10 +56,9 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
 
     const hoverStyles = hover
       ? `
-        hover:shadow-[0_20px_50px_hsl(211_100%_50%/0.15)]
-        hover:border-[#0052FF]/30
-        hover:-translate-y-2
-        hover:bg-gradient-to-br hover:from-white hover:to-[#F8FAFF]
+        hover:shadow-lg
+        hover:border-[hsl(var(--color-primary-300))]
+        hover:-translate-y-1
       `
       : '';
 

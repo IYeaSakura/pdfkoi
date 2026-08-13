@@ -73,3 +73,6 @@ comparisons.txt
 
 # Browser extension build artifact
 /pdfcraft-extension.zip
+
+# Local design draft (not version controlled)
+/DESIGN.md

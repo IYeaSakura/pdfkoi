@@ -12,9 +12,8 @@ describe('Button', () => {
     it('renders with default variant (primary)', () => {
       render(<Button>Primary</Button>);
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-gradient-to-r');
-      expect(button).toHaveClass('from-[#0052FF]');
-      expect(button).toHaveClass('to-[#0052FF]');
+      expect(button).toHaveClass('bg-[hsl(var(--color-primary))]');
+      expect(button).toHaveClass('text-[hsl(var(--color-primary-foreground))]');
     });
 
     it('renders secondary variant', () => {
@@ -26,7 +25,7 @@ describe('Button', () => {
     it('renders outline variant', () => {
       render(<Button variant="outline">Outline</Button>);
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('border-2');
+      expect(button).toHaveClass('border');
       expect(button).toHaveClass('bg-transparent');
     });
 
