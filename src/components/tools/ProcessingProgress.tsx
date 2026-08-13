@@ -126,7 +126,7 @@ export const ProcessingProgress: React.FC<ProcessingProgressProps> = ({
 
   return (
     <div
-      className={`w-full neo-card rounded-2xl p-4 ${className}`.trim()}
+      className={`w-full border border-[hsl(var(--color-border))/0.7] bg-[hsl(var(--color-elevated))] rounded-[var(--radius-lg)] p-4 ${className}`.trim()}
       role="progressbar"
       aria-valuenow={clampedProgress}
       aria-valuemin={0}
@@ -147,10 +147,7 @@ export const ProcessingProgress: React.FC<ProcessingProgressProps> = ({
         <div className="flex items-center gap-2">
           {/* Status indicator */}
           {(status === 'uploading' || status === 'processing') && (
-            <div className="relative">
-              <div className="w-4 h-4 rounded-full bg-[hsl(var(--color-primary)/0.3)]" />
-              <div className="absolute inset-0 w-4 h-4 rounded-full bg-[hsl(var(--color-primary))] animate-ping opacity-75" />
-            </div>
+            <div className="w-2.5 h-2.5 rounded-full bg-[hsl(var(--color-primary))] animate-pulse" />
           )}
           {status === 'complete' && (
             <svg
@@ -200,29 +197,12 @@ export const ProcessingProgress: React.FC<ProcessingProgressProps> = ({
       </div>
 
       {/* Progress bar */}
-      <div className="relative w-full h-3 bg-[hsl(var(--color-muted))] rounded-full overflow-hidden progress-track-glow">
+      <div className="relative w-full h-2.5 bg-[hsl(var(--color-muted))] rounded-full overflow-hidden">
         <div
           className={`absolute left-0 top-0 h-full transition-all duration-300 ease-out rounded-full ${progressBarColor}`}
           style={{ width: `${clampedProgress}%` }}
         />
-
-        {/* Animated shimmer for active states */}
-        {(status === 'uploading' || status === 'processing') && clampedProgress < 100 && (
-          <div
-            className="absolute left-0 top-0 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"
-            style={{ width: `${clampedProgress}%` }}
-          />
-        )}
       </div>
-
-      {(status === 'uploading' || status === 'processing') && (
-        <div className="mt-3 flex items-center gap-3">
-          <div className="progress-ring" style={{ ['--progress' as string]: clampedProgress / 100 }} aria-hidden="true">
-            <span className="text-[10px] font-bold text-[hsl(var(--color-primary))]">{Math.round(clampedProgress)}%</span>
-          </div>
-          <p className="text-xs text-[hsl(var(--color-muted-foreground))]">Real-time visual feedback</p>
-        </div>
-      )}
 
       {/* Message and estimated time */}
       <div className="flex items-center justify-between mt-2">

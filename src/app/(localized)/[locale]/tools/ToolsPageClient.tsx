@@ -111,53 +111,37 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
 
       <main className="flex-1">
         {/* Page Header */}
-        <section className="relative pt-36 pb-20 overflow-hidden">
-          {/* Animated Background Blobs (Subtle) */}
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[hsl(var(--color-primary)/0.05)] rounded-full mix-blend-multiply filter blur-3xl opacity-50" />
-            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[hsl(var(--color-accent)/0.05)] rounded-full mix-blend-multiply filter blur-3xl opacity-50" />
-          </div>
-
-          <div className="container mx-auto px-4 relative z-10">
+        <section className="pt-28 pb-16 bg-[hsl(var(--color-background))]">
+          <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-[hsl(var(--color-foreground))] mb-6">
-                <span className="text-gradient">{t('toolsPage.title')}</span>
+              <h1 className="text-3xl md:text-4xl font-bold text-[hsl(var(--color-foreground))] mb-4">
+                {t('toolsPage.title')}
               </h1>
-               <p className="text-lg text-[hsl(var(--color-muted-foreground))] mb-6 leading-relaxed">
-                 {t('toolsPage.subtitle', { count: allTools.length })}
-               </p>
-               <div className="prose prose-lg text-[hsl(var(--color-muted-foreground))] max-w-2xl mx-auto mb-10">
-                 <p>
-                   {t('toolsPage.description')}
-                 </p>
-                 {localizedToolContent && (
-                   <h3 className="mt-6 text-xl font-medium text-[hsl(var(--color-foreground))]">
-                     {t('toolsPage.categoriesIntro')}
-                   </h3>
-                 )}
-               </div>
+              <p className="text-base md:text-lg text-[hsl(var(--color-text-secondary))] mb-8 leading-relaxed">
+                {t('toolsPage.subtitle', { count: allTools.length })}
+              </p>
 
               {/* Search Bar */}
               <div className="relative max-w-2xl mx-auto">
-                <div className="relative group">
-                  <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none z-10">
-                    <Search className="h-5 w-5 relative -top-px text-[hsl(var(--color-primary))] group-focus-within:text-[hsl(var(--color-primary))] transition-colors" aria-hidden="true" />
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none z-10">
+                    <Search className="h-5 w-5 text-[hsl(var(--color-text-tertiary))]" aria-hidden="true" />
                   </div>
                   <input
                     type="search"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={t('tools.search.placeholder')}
-                    className="w-full pl-14 pr-12 py-4 text-lg rounded-2xl border border-[hsl(var(--color-border))] bg-[hsl(var(--color-card))] dark:bg-[hsl(var(--color-card))] text-[hsl(var(--color-foreground))] placeholder:text-[hsl(var(--color-muted-foreground))] shadow-md focus:outline-none focus:ring-4 focus:ring-[hsl(var(--color-primary)/0.15)] focus:border-[hsl(var(--color-primary))] transition-all"
+                    className="w-full pl-12 pr-12 py-3.5 text-base rounded-[var(--radius-lg)] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-elevated))] text-[hsl(var(--color-foreground))] placeholder:text-[hsl(var(--color-text-tertiary))] shadow-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-primary)/0.2)] focus:border-[hsl(var(--color-primary))] transition-all"
                     aria-label="Search tools"
                   />
                   {searchQuery && (
                     <button
                       onClick={handleClearSearch}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 p-2 hover:bg-[hsl(var(--color-muted))] rounded-full transition-colors"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 hover:bg-[hsl(var(--color-muted))] rounded-full transition-colors"
                       aria-label="Clear search"
                     >
-                      <X className="h-5 w-5 text-[hsl(var(--color-muted-foreground))]" aria-hidden="true" />
+                      <X className="h-4 w-4 text-[hsl(var(--color-text-tertiary))]" aria-hidden="true" />
                     </button>
                   )}
                 </div>
@@ -167,10 +151,10 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
         </section>
 
         {/* Filters and Tools */}
-        <section className="py-8 bg-[hsl(var(--color-muted)/0.3)] min-h-[500px]">
+        <section className="py-8 bg-[hsl(var(--color-surface))] min-h-[500px]">
           <div className="container mx-auto px-4">
             {/* Filter Bar */}
-            <div className="flex flex-col md:flex-row items-center gap-6 mb-10 sticky top-20 z-40 py-4 px-6 rounded-2xl glass-card transition-all">
+            <div className="flex flex-col md:flex-row items-center gap-4 mb-8 sticky top-20 z-40 py-3 px-4 rounded-[var(--radius-lg)] border border-[hsl(var(--color-border))/0.6] bg-[hsl(var(--color-background))/0.95] backdrop-blur-md shadow-sm transition-all">
               {/* Mobile Filter Toggle */}
               <Button
                 variant="outline"
@@ -195,12 +179,12 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                     onClick={() => setSelectedCategory(cat.value)}
                     aria-pressed={selectedCategory === cat.value}
                     className={`
-                      px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-1.5
+                      px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-1.5
                       ${selectedCategory === cat.value
                         ? cat.value === 'favorites'
-                          ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 shadow-md'
-                          : 'bg-[hsl(var(--color-primary))] text-white shadow-md shadow-primary/25'
-                        : 'bg-transparent text-[hsl(var(--color-muted-foreground))] hover:bg-[hsl(var(--color-muted))] hover:text-[hsl(var(--color-foreground))]'
+                          ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300'
+                          : 'bg-[hsl(var(--color-primary))] text-white'
+                        : 'bg-transparent text-[hsl(var(--color-text-secondary))] hover:bg-[hsl(var(--color-muted))] hover:text-[hsl(var(--color-foreground))]'
                       }
                     `}
                   >
@@ -226,7 +210,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                   variant="ghost"
                   size="sm"
                   onClick={handleClearFilters}
-                  className="ml-auto text-sm text-[hsl(var(--color-muted-foreground))]"
+                  className="ml-auto text-sm text-[hsl(var(--color-text-secondary))]"
                 >
                   {t('toolsPage.clearAll')}
                 </Button>
@@ -266,7 +250,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
               )
             ) : selectedCategory === 'favorites' ? (
               // Empty favorites state
-              <Card className="p-16 text-center glass-card border-dashed border-2">
+              <Card className="p-16 text-center border-dashed border-2">
                 <div className="max-w-md mx-auto flex flex-col items-center">
                   <div className="w-20 h-20 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center mb-6">
                     <Star className="h-10 w-10 text-amber-500" aria-hidden="true" />
@@ -274,7 +258,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                   <h3 className="text-xl font-bold text-[hsl(var(--color-foreground))] mb-2">
                     {t('tools.favorite.empty')}
                   </h3>
-                  <p className="text-[hsl(var(--color-muted-foreground))] mb-8">
+                  <p className="text-[hsl(var(--color-text-secondary))] mb-8">
                     {t('tools.favorite.hint')}
                   </p>
                   <Button variant="outline" onClick={() => setSelectedCategory('all')} className="px-8">
@@ -284,7 +268,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
               </Card>
             ) : (
               // No results
-              <Card className="p-16 text-center glass-card border-dashed border-2">
+              <Card className="p-16 text-center border-dashed border-2">
                 <div className="max-w-md mx-auto flex flex-col items-center">
                   <div className="w-20 h-20 bg-[hsl(var(--color-muted))] rounded-full flex items-center justify-center mb-6">
                     <Search className="h-10 w-10 text-[hsl(var(--color-muted-foreground))]" aria-hidden="true" />
@@ -292,7 +276,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                   <h3 className="text-xl font-bold text-[hsl(var(--color-foreground))] mb-2">
                     {t('toolsPage.noToolsFound')}
                   </h3>
-                  <p className="text-[hsl(var(--color-muted-foreground))] mb-8">
+                  <p className="text-[hsl(var(--color-text-secondary))] mb-8">
                     {t('tools.search.noResults', { query: searchQuery })}
                   </p>
                   <Button variant="outline" onClick={handleClearFilters} className="px-8">

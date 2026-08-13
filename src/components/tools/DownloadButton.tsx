@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Button, type ButtonProps } from '../ui/Button';
 import { addRecentFile } from '@/lib/storage/recent-files';
@@ -66,7 +66,9 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
   const t = useTranslations('common');
   const [blobUrl, setBlobUrl] = useState<string | null>(null);
   const [isDownloading, setIsDownloading] = useState(false);
-  
+  const revokeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const completeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   // Get tool info from context if not provided via props
   const toolContext = useToolContext();
   const toolSlug = propToolSlug || toolContext?.toolSlug;
@@ -77,9 +79,17 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
     if (file) {
       const url = URL.createObjectURL(file);
       setBlobUrl(url);
-      
-      // Cleanup function to revoke URL when component unmounts or file changes
+
+      // Cleanup function to revoke URL and pending timers when component unmounts or file changes
       return () => {
+        if (revokeTimeoutRef.current) {
+          clearTimeout(revokeTimeoutRef.current);
+          revokeTimeoutRef.current = null;
+        }
+        if (completeTimeoutRef.current) {
+          clearTimeout(completeTimeoutRef.current);
+          completeTimeoutRef.current = null;
+        }
         URL.revokeObjectURL(url);
       };
     } else {
@@ -109,27 +119,29 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
 
     // Revoke the blob URL after a short delay to ensure download starts
     if (autoRevoke) {
-      setTimeout(() => {
+      revokeTimeoutRef.current = setTimeout(() => {
         URL.revokeObjectURL(blobUrl);
         setBlobUrl(null);
-        
+
         // Recreate URL for potential re-download
         if (file) {
           const newUrl = URL.createObjectURL(file);
           setBlobUrl(newUrl);
         }
+        revokeTimeoutRef.current = null;
       }, 100);
     }
 
     // Mark download as complete
-    setTimeout(() => {
+    completeTimeoutRef.current = setTimeout(() => {
       setIsDownloading(false);
       onDownloadComplete?.();
-      
+
       // Record to recent files if tool info is provided
       if (toolSlug && file) {
         addRecentFile(filename, file.size, toolSlug, toolName);
       }
+      completeTimeoutRef.current = null;
     }, 500);
   }, [file, blobUrl, filename, isDownloading, autoRevoke, onDownloadStart, onDownloadComplete, toolSlug, toolName]);
 

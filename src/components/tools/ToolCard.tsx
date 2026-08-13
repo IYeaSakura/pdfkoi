@@ -64,32 +64,29 @@ export function ToolCard({ tool, locale, className = '', localizedContent }: Too
       data-testid="tool-card"
     >
       <Card
-        className="h-full transition-all duration-300 hover:shadow-[0_24px_60px_hsl(211_100%_50%/0.18)] hover:border-[#0052FF]/40 hover:-translate-y-2 relative overflow-hidden border-[hsl(var(--color-border))/0.6] group/card bg-white/70 backdrop-blur-sm"
+        className="h-full transition-all duration-[var(--motion-duration-hover)] hover:shadow-lg hover:border-[hsl(var(--color-primary-300))] hover:-translate-y-1 relative overflow-hidden border-[hsl(var(--color-border))/0.6] group/card bg-[hsl(var(--color-card))]"
         data-testid="tool-card-container"
       >
         <div className="absolute top-0 right-0 p-3 z-10">
           <FavoriteButton toolId={tool.id} size="sm" />
-        </div>
-        <div className="absolute top-0 right-10 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <ArrowUpRight className="w-5 h-5 text-[hsl(var(--color-primary))]" />
         </div>
 
         <div className="flex flex-col h-full">
           <div className="flex items-start gap-4 mb-4">
             {/* Tool Icon */}
             <div
-              className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-[#0052FF] via-[#4D7CFF] to-[#00D4FF] flex items-center justify-center group-hover/card:scale-110 group-hover/card:rotate-3 transition-all duration-300 shadow-lg shadow-[#0052FF]/20 group-hover/card:shadow-[#0052FF]/40"
+              className="flex-shrink-0 w-12 h-12 rounded-[var(--radius-md)] bg-[hsl(var(--color-primary-50))] flex items-center justify-center text-[hsl(var(--color-primary-600))] transition-transform duration-[var(--motion-duration-hover)] group-hover/card:scale-105"
               data-testid="tool-card-icon"
               aria-hidden="true"
             >
-              <IconComponent className="w-7 h-7 text-white drop-shadow-md" />
+              <IconComponent className="w-6 h-6" />
             </div>
           </div>
 
           {/* Tool Info */}
           <div className="flex-1 min-w-0">
             <h3
-              className="text-lg font-bold leading-snug text-[hsl(var(--color-card-foreground))] line-clamp-2 min-h-[3.25rem] break-words mb-2 group-hover/card:text-[#0052FF] transition-colors duration-300"
+              className="text-base font-semibold leading-snug text-[hsl(var(--color-card-foreground))] line-clamp-2 min-h-[2.75rem] break-words mb-2 group-hover/card:text-[hsl(var(--color-primary))] transition-colors duration-[var(--motion-duration-hover)]"
               data-testid="tool-card-name"
             >
               {anchorText}
@@ -103,11 +100,12 @@ export function ToolCard({ tool, locale, className = '', localizedContent }: Too
           </div>
 
           <div className="mt-4 pt-4 border-t border-[hsl(var(--color-border)/0.5)] flex items-center justify-between text-xs text-[hsl(var(--color-muted-foreground))]">
-            <span className="font-medium bg-[hsl(var(--color-secondary)/0.5)] px-2 py-1 rounded-md">
+            <span className="font-medium bg-[hsl(var(--color-secondary))] px-2 py-1 rounded-md">
               {categoryName}
             </span>
-            <span className="group-hover:translate-x-1 transition-transform duration-300 text-[hsl(var(--color-primary))] font-medium opacity-0 group-hover:opacity-100">
+            <span className="flex items-center gap-1 text-[hsl(var(--color-primary))] font-medium">
               {t('common.buttons.next') || 'Try now'}
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </span>
           </div>
         </div>

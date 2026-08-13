@@ -30,9 +30,9 @@ export interface FileUploaderProps {
 /**
  * FileUploader Component
  * Requirements: 5.2
- * 
+ *
  * Supports drag-and-drop, file picker, and paste from clipboard.
- * Beautified with premium UI and glassmorphism.
+ * Uses a clean dashed dropzone consistent with the new design system.
  */
 export const FileUploader: React.FC<FileUploaderProps> = ({
   accept = ['application/pdf'],
@@ -258,26 +258,24 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
 
   const baseStyles = `
     relative flex flex-col items-center justify-center
-    w-full min-h-[250px] p-10
+    w-full min-h-[220px] p-8
     border-2 border-dashed
-    rounded-[2rem]
-    transition-all duration-300
+    rounded-[var(--radius-lg)]
+    transition-colors duration-[var(--transition-normal)]
     cursor-pointer
-    group dropzone-aurora
+    group
   `;
 
   // Dynamic styles based on state
   const stateStyles = disabled
     ? 'border-[hsl(var(--color-muted))] bg-[hsl(var(--color-muted)/0.3)] cursor-not-allowed opacity-50'
     : isDragging
-      ? 'border-[hsl(var(--color-primary))] bg-[hsl(var(--color-primary)/0.05)] scale-[1.01] shadow-2xl shadow-primary/10'
+      ? 'border-[hsl(var(--color-primary))] bg-[hsl(var(--color-primary-50)/0.5)]'
       : `
-      border-[hsl(var(--color-border))] 
-      bg-[hsl(var(--color-card)/0.5)] 
-      hover:border-[hsl(var(--color-primary))] 
-      hover:bg-[hsl(var(--color-background))] 
-      hover:shadow-[0_24px_56px_hsl(var(--color-primary)/0.14)]
-      neo-card
+      border-[hsl(var(--color-border))]
+      bg-[hsl(var(--color-surface))]
+      hover:border-[hsl(var(--color-primary))]
+      hover:bg-[hsl(var(--color-primary-50)/0.4)]
     `;
 
   return (
@@ -307,17 +305,12 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
         disabled={disabled}
       />
 
-      {/* Decorative background blob */}
-      <div className="absolute inset-0 overflow-hidden rounded-[2rem] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[hsl(var(--color-primary)/0.03)] rounded-full blur-3xl" />
-      </div>
-
       {/* Upload icon */}
       <div className={`
-        mb-6 p-4 rounded-full transition-transform duration-300 group-hover:scale-110
-        ${isDragging ? 'bg-[hsl(var(--color-primary)/0.12)] text-[hsl(var(--color-primary))] shadow-[0_12px_30px_hsl(var(--color-primary)/0.22)]' : 'bg-[hsl(var(--color-muted))] text-[hsl(var(--color-muted-foreground))] group-hover:bg-[hsl(var(--color-primary)/0.12)] group-hover:text-[hsl(var(--color-primary))] group-hover:shadow-[0_10px_24px_hsl(var(--color-primary)/0.18)]'}
+        mb-5 p-4 rounded-full transition-colors duration-[var(--transition-normal)]
+        ${isDragging ? 'bg-[hsl(var(--color-primary-50))] text-[hsl(var(--color-primary))]' : 'bg-[hsl(var(--color-muted))] text-[hsl(var(--color-muted-foreground))] group-hover:bg-[hsl(var(--color-primary-50))] group-hover:text-[hsl(var(--color-primary))]'}
       `}>
-        <UploadCloud className="w-10 h-10" aria-hidden="true" />
+        <UploadCloud className="w-9 h-9" aria-hidden="true" />
       </div>
 
       {/* Label */}
@@ -349,11 +342,11 @@ export const FileUploader: React.FC<FileUploaderProps> = ({
 
       {/* Drag overlay */}
       {isDragging && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[hsl(var(--color-background)/0.9)] backdrop-blur-sm rounded-[2rem] z-10 transition-opacity duration-200">
-          <div className="p-4 rounded-full bg-[hsl(var(--color-primary)/0.1)] text-[hsl(var(--color-primary))] mb-4 animate-bounce">
-            <Plus className="w-8 h-8" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[hsl(var(--color-background)/0.9)] rounded-[var(--radius-lg)] z-10 transition-opacity duration-200">
+          <div className="p-3 rounded-full bg-[hsl(var(--color-primary-50))] text-[hsl(var(--color-primary))] mb-3">
+            <Plus className="w-7 h-7" />
           </div>
-          <p className="text-xl font-bold text-[hsl(var(--color-primary))]">
+          <p className="text-lg font-semibold text-[hsl(var(--color-primary))]">
             Drop files to upload
           </p>
         </div>

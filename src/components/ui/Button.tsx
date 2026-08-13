@@ -1,6 +1,6 @@
 'use client';
 
-import React, { forwardRef, ButtonHTMLAttributes, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, ButtonHTMLAttributes } from 'react';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
 export type ButtonSize = 'sm' | 'md' | 'lg' | 'icon';
@@ -89,94 +89,33 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const localRef = useRef<HTMLButtonElement | null>(null);
-    const prevLoadingRef = useRef(loading);
-    const releaseWidthTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-    const feedbackTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-    const [lockedWidth, setLockedWidth] = useState<number | undefined>(undefined);
-    const [showCompletionFx, setShowCompletionFx] = useState(false);
-
     const isDisabled = disabled || loading;
 
-    useEffect(() => {
-      const wasLoading = prevLoadingRef.current;
-
-      if (!wasLoading && loading && localRef.current) {
-        setLockedWidth(localRef.current.offsetWidth);
-        setShowCompletionFx(false);
-      }
-
-      if (wasLoading && !loading) {
-        if (releaseWidthTimerRef.current) clearTimeout(releaseWidthTimerRef.current);
-        releaseWidthTimerRef.current = setTimeout(() => setLockedWidth(undefined), 260);
-
-        setShowCompletionFx(true);
-        if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
-        feedbackTimerRef.current = setTimeout(() => setShowCompletionFx(false), 760);
-      }
-
-      prevLoadingRef.current = loading;
-    }, [loading]);
-
-    useEffect(() => {
-      return () => {
-        if (releaseWidthTimerRef.current) clearTimeout(releaseWidthTimerRef.current);
-        if (feedbackTimerRef.current) clearTimeout(feedbackTimerRef.current);
-      };
-    }, []);
-
     const baseStyles = `
-      relative isolate overflow-hidden motion-standard
-      inline-flex items-center justify-center gap-2
+      relative inline-flex items-center justify-center gap-2
       font-medium rounded-[var(--radius-md)]
       focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
-      focus-visible:shadow-[0_0_0_4px_hsl(var(--color-ring)/0.22)]
+      focus-visible:ring-[hsl(var(--color-ring))]
       active:scale-[var(--press-scale)]
       disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
+      transition-colors transition-transform
     `;
-
-    const setButtonRef = (node: HTMLButtonElement | null) => {
-      localRef.current = node;
-      if (typeof ref === 'function') ref(node);
-      else if (ref) (ref as React.MutableRefObject<HTMLButtonElement | null>).current = node;
-    };
 
     return (
       <button
-        ref={setButtonRef}
+        ref={ref}
         type={type}
         disabled={isDisabled}
         aria-disabled={isDisabled}
         aria-busy={loading}
         aria-label={ariaLabel}
         data-loading={loading ? 'true' : 'false'}
-        className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${loading ? 'btn-loading-morph' : ''} ${className}`.trim()}
-        style={lockedWidth ? { width: `${lockedWidth}px` } : undefined}
+        className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`.trim()}
         {...props}
       >
-        {showCompletionFx && (
-          <span className="btn-particle-layer" aria-hidden="true">
-            {[0, 1, 2, 3, 4, 5].map((idx) => (
-              <span
-                key={idx}
-                className="btn-particle"
-                style={{
-                  ['--particle-angle' as string]: `${idx * 60}deg`,
-                  ['--particle-delay' as string]: `${idx * 36}ms`,
-                }}
-              />
-            ))}
-          </span>
-        )}
-
-        {loading && <span className="btn-loading-sheen" aria-hidden="true" />}
-
-        <span className="relative z-10 inline-flex items-center justify-center gap-2">
-          {loading && <LoadingSpinner className="btn-spinner-pop" />}
-          <span className={`transition-opacity duration-200 ${loading ? 'opacity-95' : 'opacity-100'}`}>
-            {children}
-          </span>
+        {loading && <LoadingSpinner />}
+        <span className={`${loading ? 'opacity-95' : 'opacity-100'}`}>
+          {children}
         </span>
       </button>
     );

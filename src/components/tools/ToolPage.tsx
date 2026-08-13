@@ -141,7 +141,7 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
 
   return (
     <ToolProvider toolSlug={tool.slug} toolName={toolDisplayName}>
-      <div className="min-h-screen flex flex-col bg-aurora" data-testid="tool-page">
+      <div className="min-h-screen flex flex-col bg-[hsl(var(--color-background))]" data-testid="tool-page">
         <Header locale={locale as Locale} />
 
         <main id="main-content" className="flex-1" tabIndex={-1}>
@@ -179,13 +179,12 @@ export function ToolPage({ tool, content, locale, children, localizedRelatedTool
             <ToolHeader tool={tool} content={content} />
 
             {/* Tool Interface Area */}
-            <section
-              className="mt-6 neo-card rounded-3xl p-4 sm:p-6"
+            <Card
+              className="mt-6 p-4 sm:p-6 border border-[hsl(var(--color-border))/0.7]"
               data-testid="tool-page-interface"
-              aria-label="Tool interface"
             >
               {children}
-            </section>
+            </Card>
 
             {/* Description Section */}
             <DescriptionSection description={content.description} />
@@ -238,10 +237,10 @@ function ToolHeader({ tool, content }: ToolHeaderProps) {
       <meta itemProp="price" content="0" />
       <meta itemProp="priceCurrency" content="USD" />
       <div
-        className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[hsl(var(--color-primary)/0.1)] to-[hsl(var(--color-accent)/0.1)] mb-4 shadow-inner"
+        className="inline-flex items-center justify-center w-14 h-14 rounded-[var(--radius-lg)] bg-[hsl(var(--color-primary-50))] mb-4"
         aria-hidden="true"
       >
-        <IconComponent className="w-8 h-8 text-[hsl(var(--color-primary))]" />
+        <IconComponent className="w-7 h-7 text-[hsl(var(--color-primary-600))]" />
       </div>
       <h1
         className="text-3xl font-bold text-[hsl(var(--color-foreground))] mb-2"
@@ -288,7 +287,7 @@ function DescriptionSection({ description }: DescriptionSectionProps) {
       >
         {t('tools.about')}
       </h2>
-      <Card variant="outlined" size="lg" className="glass-card">
+      <Card variant="outlined" size="lg">
         <div
           className="prose prose-sm max-w-none text-[hsl(var(--color-foreground))/0.8]"
           dangerouslySetInnerHTML={{ __html: normalizedDescription }}
@@ -339,7 +338,7 @@ function HowToUseSection({ steps, tool, locale, localizedRelatedTools }: HowToUs
             itemType="https://schema.org/HowToStep"
           >
             <meta itemProp="position" content={String(step.step)} />
-            <Card className="flex-1 h-full glass-card border-[hsl(var(--color-border))/0.6] hover:border-[hsl(var(--color-primary)/0.3)] transition-colors">
+            <Card className="flex-1 h-full border-[hsl(var(--color-border))/0.6] hover:border-[hsl(var(--color-primary-300))] transition-colors">
               <div
                 className="w-10 h-10 rounded-xl bg-[hsl(var(--color-primary)/0.1)] text-[hsl(var(--color-primary))] flex items-center justify-center font-bold text-lg mb-4"
                 aria-hidden="true"
@@ -400,7 +399,7 @@ function UseCasesSection({ useCases, tool, locale, localizedRelatedTools }: UseC
           <Card
             key={index}
             variant="default"
-            className="glass-card hover:shadow-lg transition-all duration-300"
+            className="border border-[hsl(var(--color-border))/0.6] hover:shadow-md transition-all duration-[var(--motion-duration-hover)]"
             data-testid={`use-case-${index}`}
           >
             <div className="flex items-start gap-4">
@@ -466,7 +465,6 @@ function FAQSection({ faq, tool, locale, localizedRelatedTools }: FAQSectionProp
           <Card
             key={index}
             variant="outlined"
-            className="glass-card"
             data-testid={`faq-item-${index}`}
           >
             <h3 className="font-semibold text-[hsl(var(--color-foreground))]">
@@ -530,7 +528,7 @@ function SectionLinkHint({ tool, locale, localizedRelatedTools, sectionKey }: Se
           <span key={relatedTool.id}>
             <Link
               href={getPublicPath(`/tools/${relatedTool.slug}`, localeKey)}
-              className="text-[hsl(var(--color-primary))] underline decoration-[hsl(var(--color-primary))/0.35] underline-offset-4 hover:text-[#0052FF]"
+              className="text-[hsl(var(--color-primary))] underline decoration-[hsl(var(--color-primary))/0.35] underline-offset-4 hover:text-[hsl(var(--color-primary-hover))]"
             >
               {anchorText}
             </Link>
@@ -588,13 +586,13 @@ function RelatedToolsSection({ tools, locale, localizedRelatedTools }: RelatedTo
               href={getPublicPath(`/tools/${tool.slug}`, locale as Locale)}
               className="block group"
             >
-              <Card hover clickable className="h-full glass-card transition-all duration-300 group-hover:-translate-y-1">
+              <Card hover clickable className="h-full border border-[hsl(var(--color-border))/0.6]">
                 <div className="flex items-start gap-4">
                   <div
-                    className="flex-shrink-0 w-12 h-12 rounded-xl bg-[hsl(var(--color-primary)/0.1)] flex items-center justify-center group-hover:bg-[hsl(var(--color-primary))] transition-colors duration-300"
+                    className="flex-shrink-0 w-11 h-11 rounded-[var(--radius-md)] bg-[hsl(var(--color-primary-50))] flex items-center justify-center text-[hsl(var(--color-primary-600))]"
                     aria-hidden="true"
                   >
-                    <IconComponent className="w-6 h-6 text-[hsl(var(--color-primary))] group-hover:text-white transition-colors duration-300" />
+                    <IconComponent className="w-5 h-5" />
                   </div>
                   <div className="min-w-0">
                     <span className="font-semibold text-[hsl(var(--color-foreground))] block mb-1">
