@@ -236,34 +236,6 @@ To run this project locally, follow these steps:
 4.  **Open your browser**
     Navigate to [http://localhost:3000](http://localhost:3000) to see the application running.
 
-### Docker Compose
-
-If you prefer running PDFkoi in containers, you can use the provided `docker-compose.yml`.
-
-#### Development (Next.js dev server)
-
-```bash
-docker compose --profile dev up
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-#### Static export + Nginx (production-like)
-
-This runs `next build` to generate the static export (`out/`), then serves it via Nginx using `nginx.conf`.
-
-```bash
-docker compose --profile prod up --build
-```
-
-Open [http://localhost:8080](http://localhost:8080).
-
-To stop and remove containers:
-
-```bash
-docker compose down
-```
-
 ## 📜 Scripts
 
 - `npm run dev`: Starts the development server with Turbopack.
@@ -274,7 +246,7 @@ docker compose down
 
 ## 🚀 Production Deployment Guide
 
-PDFkoi is configured for static export (`output: 'export'`), which means it can be deployed to any service that supports static website hosting without requiring a Node.js server.
+PDFkoi is configured for static export (`output: 'export'`), which means it can be deployed to any service that supports static website hosting without requiring a Node.js server. The primary deployment target is **Tencent Cloud EdgeOne Pages**, configured via the `edgeone.json` file in the project root.
 
 ### 1. Build Project
 
@@ -286,63 +258,21 @@ npm run build
 
 After the build is complete, all static files will be located in the `out` directory.
 
-### 2. Deployment Options
+### 2. Deploy to EdgeOne Pages
 
-You can deploy the contents of the `out` directory to any of the following platforms:
+1. Log in to the [Tencent Cloud EdgeOne console](https://edgeone.cloud.tencent.com/) and open the **Pages** service.
+2. Create a new project and connect your GitHub/Gitee repository.
+3. In project settings, use the default build command (`npm run build`) and output directory (`out`). The `edgeone.json` file at the repository root overrides these defaults and provides the redirect, rewrite, and header rules.
+4. Click **Start deployment**. EdgeOne automatically builds and publishes the static export.
 
-#### A. Vercel (Recommended)
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run the `vercel` command.
-3. Follow the prompts to set the build command to `npm run build` and the output directory to `out`.
-4. Alternatively, connect directly to your GitHub repository, and Vercel will automatically detect Next.js and configure it.
+### 3. Runtime Behavior on EdgeOne
 
-#### B. Nginx / Apache
-Copy the contents of the `out` directory to the root directory of your web server.
-
-**Nginx Configuration Example:**
-```nginx
-server {
-    listen 80;
-    server_name example.com;
-    root /path/to/your/PDFkoi/out;
-    index index.html;
-
-    # Handle static files
-    location / {
-        try_files $uri $uri.html $uri/ =404;
-    }
-
-    # Enable gzip compression
-    gzip on;
-    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
-}
-```
-
-#### C. GitHub Pages
-1. Push the `out` directory to the `gh-pages` branch of your repository.
-2. Enable GitHub Pages in your repository settings.
-3. Note: If you are not using a custom domain, you might need to modify `basePath` in `next.config.js`.
-
-#### D. Netlify
-1. Connect your repository to Netlify.
-2. Set build command: `npm run build`
-3. Set publish directory: `out`
-
-#### E. Cloudflare Pages
-1. Connect your GitHub repository to Cloudflare Pages.
-2. Set build command: `npm run build`
-3. Set build output directory: `out`
-4. Use Node.js 22 in the Cloudflare build environment.
-5. Keep the `public/_headers` and `public/_redirects` files in the repo so Cloudflare can apply cache headers and redirects after the static export is published.
-6. Query-string category redirects such as `/tools?category=edit-annotate` are handled by Cloudflare Pages Functions because `_redirects` does not support query-parameter matching.
-
-### 3. Important Notes
-- **Headers Configuration**: The `headers` configuration in `next.config.js` does not automatically take effect in static export mode. You need to configure HTTP headers separately depending on your hosting platform (for example `public/_headers` on Cloudflare Pages or platform-specific config files elsewhere).
-- **Image Optimization**: Since static export does not support Next.js's default image optimization server, the project is configured with `images: { unoptimized: true }`.
-- **Middleware**: Next.js middleware is not available in static export deployments. This project is structured so localized routes are generated at build time and Cloudflare handles the `/en` to `/` redirect via `public/_redirects`.
-- **Legacy category filters**: Old category URLs that use `?category=` are redirected at the hosting layer. Netlify uses `netlify.toml`, Vercel uses `vercel.json`, Nginx uses `nginx.conf`, and Cloudflare Pages uses route-specific Functions because `public/_redirects` cannot match query parameters.
+- **Locale & legacy redirects**: `/en`, `/zh-TW`, and legacy `?category=` redirects are handled by the EdgeOne Pages Functions in the `functions/` directory (`[[path]].js` and `tools.js`), which use the native `onRequest` syntax.
+- **Path rewrites**: Root-level paths such as `/tools`, `/about`, `/workflow`, etc. are rewritten to their `/en/...` equivalents via the `rewrites` rules in `edgeone.json`.
+- **Headers & caching**: Security headers and static-asset cache rules are defined in the `headers` section of `edgeone.json`.
 
 ### 4. Verify Deployment
+
 After deployment, please check the following features to ensure everything is working correctly:
 - Multi-language routing (e.g., `/en`, `/zh`)
 - Tool page loading

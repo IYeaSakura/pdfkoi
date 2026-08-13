@@ -1,8 +1,8 @@
-
 const fs = require('fs');
 
 function getKeys(obj, prefix = '') {
     let keys = [];
+    if (!obj) return keys;
     for (let key in obj) {
         if (typeof obj[key] === 'object' && obj[key] !== null) {
             keys = keys.concat(getKeys(obj[key], prefix + key + '.'));

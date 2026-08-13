@@ -70,3 +70,6 @@ out.txt
 bentopdf-main
 # Comparison/debug files
 comparisons.txt
+
+# Browser extension build artifact
+/pdfcraft-extension.zip

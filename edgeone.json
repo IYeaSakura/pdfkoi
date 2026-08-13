@@ -1,0 +1,184 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "out",
+  "nodeVersion": "22.11.0",
+  "redirects": [
+    {
+      "source": "$wwwhost",
+      "destination": "$host",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/merge-pdf",
+      "destination": "/tools/merge-pdf/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tools/split-pdf",
+      "destination": "/tools/split-pdf/",
+      "statusCode": 301
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/tools/*",
+      "destination": "/en/tools/:splat"
+    },
+    {
+      "source": "/workflow/*",
+      "destination": "/en/workflow/:splat"
+    },
+    {
+      "source": "/about/*",
+      "destination": "/en/about/:splat"
+    },
+    {
+      "source": "/faq/*",
+      "destination": "/en/faq/:splat"
+    },
+    {
+      "source": "/privacy/*",
+      "destination": "/en/privacy/:splat"
+    },
+    {
+      "source": "/cookies/*",
+      "destination": "/en/cookies/:splat"
+    },
+    {
+      "source": "/contact/*",
+      "destination": "/en/contact/:splat"
+    },
+    {
+      "source": "/terms/*",
+      "destination": "/en/terms/:splat"
+    },
+    {
+      "source": "/compress-pdf-for-email/*",
+      "destination": "/en/compress-pdf-for-email/:splat"
+    },
+    {
+      "source": "/compress-pdf-without-upload/*",
+      "destination": "/en/compress-pdf-without-upload/:splat"
+    },
+    {
+      "source": "/merge-pdf-no-signup/*",
+      "destination": "/en/merge-pdf-no-signup/:splat"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/*",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/**/*.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/**/*.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/**/*.mjs",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/javascript"
+        }
+      ]
+    },
+    {
+      "source": "/**/*.{png,jpg,jpeg,gif,svg,webp,avif,ico}",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/**/*.{woff,woff2,ttf,eot}",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/workers/*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/pdfjs-viewer/*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/**/*.wasm",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/wasm"
+        }
+      ]
+    },
+    {
+      "source": "/**/*.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ]
+}
