@@ -445,35 +445,35 @@
   },
   "home": {
     "hero": {
-      "title": "Online PDF Tools for Sensitive Documents",
-      "highlight": "No Signup Required",
-      "subtitle": "No signup required for contracts, IDs, resumes, and other files",
-      "description": "Handle common PDF tasks like merge, split, compress, image to PDF, and PDF to Word before sending, submitting, or sharing important documents.",
-      "useCases": "Useful for contracts, IDs, resumes, quotes, and application files before sharing.",
-      "cta": "Get Started"
+      "title": "PDF tools for common tasks",
+      "highlight": "No signup",
+      "subtitle": "Merge, split, compress, convert, edit, and secure PDF files",
+      "description": "Pick a tool or search below. Files are processed in your browser and are not uploaded to a server.",
+      "useCases": "Contracts, IDs, resumes, scans, and forms",
+      "cta": "Browse tools"
     },
     "features": {
       "privacy": {
-        "title": "100% Private",
-        "description": "All processing happens in your browser. Your files never leave your device."
+        "title": "Private",
+        "description": "Processing happens locally in your browser. Your files stay on your device."
       },
-      "free": {
-        "title": "Completely Free",
-        "description": "No registration, no limits, no hidden costs."
+      "local": {
+        "title": "Browser-based",
+        "description": "No upload step. PDFs are handled by WebAssembly in your browser."
       },
-      "powerful": {
-        "title": "Powerful Tools",
-        "description": "95+ professional PDF tools for all your needs."
+      "fast": {
+        "title": "Fast",
+        "description": "Select a tool, add files, and get results without unnecessary steps."
       }
     },
     "popularTools": {
-      "badge": "Most Popular",
-      "title": "Popular PDF Tools",
-      "description": "Our most used tools to help you get your work done faster."
+      "badge": "Popular",
+      "title": "Popular tools",
+      "description": "Frequently used tools to handle PDFs quickly."
     },
     "categoriesSection": {
-      "title": "Explore All Tool Categories",
-      "description": "{count}+ professional PDF tools organized by category",
+      "title": "Browse by category",
+      "description": "{count}+ PDF tools organized by task",
       "toolsCount": "{count} tools"
     },
     "categoriesDescription": {

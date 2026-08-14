@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowRight, Zap, Wrench, Lock, ShieldCheck, Star, Edit, FileImage, FolderOpen, Settings, Search, X } from 'lucide-react';
+import { ArrowRight, Zap, Lock, ShieldCheck, Star, Edit, FileImage, FolderOpen, Settings, Search, X } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ToolGrid } from '@/components/tools/ToolGrid';
@@ -95,14 +95,14 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
       descriptionKey: 'home.features.privacy.description',
     },
     {
-      icon: Zap,
-      titleKey: 'home.features.free.title',
-      descriptionKey: 'home.features.free.description',
+      icon: Lock,
+      titleKey: 'home.features.local.title',
+      descriptionKey: 'home.features.local.description',
     },
     {
-      icon: Wrench,
-      titleKey: 'home.features.powerful.title',
-      descriptionKey: 'home.features.powerful.description',
+      icon: Zap,
+      titleKey: 'home.features.fast.title',
+      descriptionKey: 'home.features.fast.description',
     },
   ];
 
@@ -146,11 +146,6 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-[hsl(var(--color-primary)/0.08)] border border-[hsl(var(--color-primary)/0.15)] text-sm font-medium text-[hsl(var(--color-primary))]">
-                  <Star className="h-3.5 w-3.5" aria-hidden="true" />
-                  {t('common.brand')}
-                </div>
-
                 <h1
                   id="hero-title"
                   className="hero-title text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-4"
@@ -296,25 +291,6 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
           </div>
         </section>
 
-        {/* Browser Safety Section */}
-        <section className="py-14" aria-labelledby="browser-safety">
-          <div className="container mx-auto px-4">
-            <Card className="max-w-4xl mx-auto p-8 md:p-10 border border-[hsl(var(--color-border))/0.65)]">
-              <div className="max-w-3xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[hsl(var(--color-primary))] mb-3">
-                  {t('home.contentModules.browserSafety.eyebrow')}
-                </p>
-                <h2 id="browser-safety" className="text-2xl md:text-3xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                  {t('home.contentModules.browserSafety.heading')}
-                </h2>
-                <p className="text-base md:text-lg leading-relaxed text-[hsl(var(--color-text-secondary))]">
-                  {t('home.contentModules.browserSafety.body')}
-                </p>
-              </div>
-            </Card>
-          </div>
-        </section>
-
         {/* Features Section */}
         <section className="py-12" aria-label="Features">
           <div className="container mx-auto px-4">
@@ -335,38 +311,6 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                   </Card>
                 );
               })}
-            </div>
-          </div>
-        </section>
-
-        {/* Everyday Tasks Section */}
-        <section className="py-14 bg-[hsl(var(--color-surface))]" aria-labelledby="everyday-tasks">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto grid gap-6 lg:grid-cols-[1.15fr_0.85fr] items-start">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[hsl(var(--color-primary))] mb-3">
-                  {t('home.contentModules.everydayTasks.eyebrow')}
-                </p>
-                <h2 id="everyday-tasks" className="text-2xl md:text-3xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                  {t('home.contentModules.everydayTasks.heading')}
-                </h2>
-                <p className="text-base md:text-lg leading-relaxed text-[hsl(var(--color-text-secondary))]">
-                  {t('home.contentModules.everydayTasks.body')}
-                </p>
-              </div>
-              <Card className="p-6 h-full bg-[hsl(var(--color-elevated))] border border-[hsl(var(--color-border))/0.7]">
-                <h3 className="text-base font-semibold text-[hsl(var(--color-foreground))] mb-4">
-                  {t('home.contentModules.everydayTasks.cardTitle')}
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-[hsl(var(--color-text-secondary))]">
-                  <div className="rounded-[var(--radius-md)] bg-[hsl(var(--color-primary-50))] px-4 py-3">{t('home.contentModules.everydayTasks.items.merge')}</div>
-                  <div className="rounded-[var(--radius-md)] bg-[hsl(var(--color-primary-50))] px-4 py-3">{t('home.contentModules.everydayTasks.items.split')}</div>
-                  <div className="rounded-[var(--radius-md)] bg-[hsl(var(--color-primary-50))] px-4 py-3">{t('home.contentModules.everydayTasks.items.compress')}</div>
-                  <div className="rounded-[var(--radius-md)] bg-[hsl(var(--color-primary-50))] px-4 py-3">{t('home.contentModules.everydayTasks.items.convert')}</div>
-                  <div className="rounded-[var(--radius-md)] bg-[hsl(var(--color-primary-50))] px-4 py-3">{t('home.contentModules.everydayTasks.items.images')}</div>
-                  <div className="rounded-[var(--radius-md)] bg-[hsl(var(--color-primary-50))] px-4 py-3">{t('home.contentModules.everydayTasks.items.organize')}</div>
-                </div>
-              </Card>
             </div>
           </div>
         </section>
@@ -425,76 +369,6 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
           </div>
         </section>
 
-        {/* Local Processing Section */}
-        <section className="py-14 bg-[hsl(var(--color-surface))]" aria-labelledby="local-processing">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto grid gap-6 lg:grid-cols-3">
-              <Card className="lg:col-span-2 p-8 md:p-10 border border-[hsl(var(--color-border))/0.65]">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[hsl(var(--color-primary))] mb-3">
-                  {t('home.contentModules.localProcessing.eyebrow')}
-                </p>
-                <h2 id="local-processing" className="text-2xl md:text-3xl font-bold text-[hsl(var(--color-foreground))] mb-4">
-                  {t('home.contentModules.localProcessing.heading')}
-                </h2>
-                <p className="text-base md:text-lg leading-relaxed text-[hsl(var(--color-text-secondary))]">
-                  {t('home.contentModules.localProcessing.body')}
-                </p>
-              </Card>
-              <Card className="p-6 bg-[hsl(var(--color-elevated))] border border-[hsl(var(--color-border))/0.7]">
-                <h3 className="text-base font-semibold text-[hsl(var(--color-foreground))] mb-4">
-                  {t('home.contentModules.localProcessing.cardTitle')}
-                </h3>
-                <ul className="space-y-3 text-sm text-[hsl(var(--color-text-secondary))]">
-                  <li>{t('home.contentModules.localProcessing.items.contracts')}</li>
-                  <li>{t('home.contentModules.localProcessing.items.resumes')}</li>
-                  <li>{t('home.contentModules.localProcessing.items.invoices')}</li>
-                  <li>{t('home.contentModules.localProcessing.items.scanned')}</li>
-                  <li>{t('home.contentModules.localProcessing.items.id')}</li>
-                </ul>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="py-16" aria-label="Statistics">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div className="p-4">
-                <div className="text-3xl lg:text-4xl font-bold text-[hsl(var(--color-foreground))] mb-1">
-                  {allTools.length}+
-                </div>
-                <div className="text-xs font-medium text-[hsl(var(--color-text-secondary))] uppercase tracking-wider">
-                  {t('home.stats.pdfTools')}
-                </div>
-              </div>
-              <div className="p-4">
-                <div className="text-3xl lg:text-4xl font-bold text-[hsl(var(--color-foreground))] mb-1">
-                  100%
-                </div>
-                <div className="text-xs font-medium text-[hsl(var(--color-text-secondary))] uppercase tracking-wider">
-                  {t('home.stats.freeToUse')}
-                </div>
-              </div>
-              <div className="p-4">
-                <div className="text-3xl lg:text-4xl font-bold text-[hsl(var(--color-foreground))] mb-1">
-                  9
-                </div>
-                <div className="text-xs font-medium text-[hsl(var(--color-text-secondary))] uppercase tracking-wider">
-                  {t('home.stats.languages')}
-                </div>
-              </div>
-              <div className="p-4">
-                <div className="text-3xl lg:text-4xl font-bold text-[hsl(var(--color-foreground))] mb-1">
-                  0
-                </div>
-                <div className="text-xs font-medium text-[hsl(var(--color-text-secondary))] uppercase tracking-wider">
-                  {t('home.stats.filesUploaded')}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer locale={locale} />
