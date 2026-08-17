@@ -176,7 +176,7 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
     title: 'Compress PDF Without Uploading Files',
     h1: 'Compress PDF Without Upload',
     metaDescription:
-      'Compress PDF files without uploading them to a remote server. Reduce PDF size in your browser with no signup required.',
+      'Compress PDF files without uploading them to a remote server. Reduce PDF size directly in your browser.',
     keywords: [
       'compress pdf without upload',
       'compress pdf in browser',
@@ -254,7 +254,7 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
       {
         question: 'Can I compress a PDF without uploading it to a remote server?',
         answer:
-          'Yes. That is the exact use case this page targets: reducing file size in a browser-based workflow with no signup required.',
+          'Yes. That is the exact use case this page targets: reducing file size in a browser-based workflow.',
       },
       {
         question: 'Why do people look for a no-upload PDF compressor?',
@@ -317,7 +317,7 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
     sectionTitle: 'Why this long-tail query matters',
     sectionBody: [
       '“Merge PDF” is highly competitive. “Merge PDF no signup” is much more specific. The user intent is clearer, the friction problem is obvious, and the searcher usually wants to finish the task immediately.',
-      'That makes this page a better short-term SEO target. It also fits PDFkoi naturally, because the product already emphasizes browser-based processing and no-signup access.',
+      'That makes this page a better short-term SEO target. It also fits PDFkoi naturally, because the product already emphasizes browser-based processing and direct access without account creation.',
     ],
     evidenceTitle: 'Evidence and practical notes',
     evidenceItems: [
@@ -335,7 +335,7 @@ export const landingPages: Record<LandingPageSlug, LandingPageContent> = {
       },
       {
         title: 'No-signup intent is usually about speed and friction',
-        body: 'Users looking for “no signup” workflows typically want to finish a one-off document task immediately, which is why direct merging pages can perform better than broad generic tool indexes for this query.',
+        body: 'Users looking for low-friction workflows typically want to finish a one-off document task immediately, which is why direct merging pages can perform better than broad generic tool indexes for this query.',
         sourceLabel: 'PDFkoi workflow guidance',
         sourceHref: '/merge-pdf-no-signup',
       },

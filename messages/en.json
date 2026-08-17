@@ -1,24 +1,24 @@
 {
   "metadata": {
     "home": {
-      "title": "Online PDF Tools for Sensitive Documents, No Signup Required | PDFkoi",
-      "description": "Use free online PDF tools with no signup required for common tasks like merging, splitting, compressing, image to PDF, and PDF to Word. A practical choice for preparing contracts, IDs, resumes, and other sensitive documents before sharing.",
+      "title": "PDF Tools | PDFkoi",
+      "description": "Browser-based PDF tools for merging, splitting, compressing, converting, and editing PDF files. Files are processed locally in your browser.",
       "keywords": {
-        "k1": "pdf tools for sensitive documents",
-        "k2": "pdf tools no signup",
-        "k3": "pdf tools for contracts",
-        "k4": "pdf tools for resumes",
-        "k5": "prepare pdf before sharing",
-        "k6": "online pdf tools for important documents"
+        "k1": "pdf tools",
+        "k2": "merge pdf",
+        "k3": "split pdf",
+        "k4": "compress pdf",
+        "k5": "convert pdf",
+        "k6": "browser-based pdf tools"
       }
     },
     "tools": {
-      "title": "Free, Private, Browser-Based PDF Tools | PDFkoi",
-      "description": "Free, private, browser-based PDF tools for converting, merging, splitting, and compressing PDFs online. No signup required."
+      "title": "All PDF Tools | PDFkoi",
+      "description": "Browse browser-based PDF tools for converting, merging, splitting, compressing, and editing PDFs."
     },
     "about": {
       "title": "About",
-      "description": "Learn about PDFkoi and our free, private, browser-based PDF tools. All processing happens in your browser."
+      "description": "Learn about PDFkoi, an open-source collection of browser-based PDF tools."
     },
     "faq": {
       "title": "Frequently Asked Questions",
@@ -72,6 +72,7 @@
       "edit": "Edit",
       "back": "Back",
       "next": "Next",
+      "open": "Open",
       "previous": "Previous",
       "submit": "Submit",
       "clearAll": "Clear All",
@@ -87,16 +88,16 @@
       "add": "Add"
     },
     "categoryPage": {
-      "helperText": "Use this hub to jump into the tool page that best matches your document task.",
-      "introTitle": "Use this hub to find the right tool faster",
-      "introParagraph1": "This category groups together the most relevant tools for {category} workflows.",
-      "introParagraph2": "If you already know the exact action you need, open that tool page directly for the clearest path.",
-      "anchorSectionTitle": "Popular direct links in this category",
-      "anchorSectionDescription": "These links point to the most common tasks in this category.",
+      "helperText": "Find the tool that matches your document task.",
+      "introTitle": "Find the right tool",
+      "introParagraph1": "This category groups tools for {category} tasks.",
+      "introParagraph2": "If you know the exact action you need, open that tool page directly.",
+      "anchorSectionTitle": "Direct links in this category",
+      "anchorSectionDescription": "Common tasks in this category.",
       "anchorNote": "Go directly to {tool} when this is the task you need.",
-      "featuredSectionTitle": "Start with a tool that matches your task",
-      "featuredSectionDescription": "These are strong starting points when you already know what you need to do.",
-      "featuredLabel": "Best for {tool}",
+      "featuredSectionTitle": "Tools that match your task",
+      "featuredSectionDescription": "Starting points for common actions.",
+      "featuredLabel": "Jump to {tool}",
       "featuredReason": "Open this tool when {tool} is your main task.",
       "openTool": "Open {tool}"
     },
@@ -111,7 +112,7 @@
     "footer": {
       "footer": "© 2025 PDFkoi. All rights reserved.",
       "copyright": "© {year} PDFkoi. All rights reserved.",
-      "privacyBadge": "100% Private - Files never leave your device",
+      "privacyBadge": "Private — files stay on your device",
       "madeWith": "Made with <Heart /> and <Nextjs />"
     },
     "recentFiles": {
@@ -201,8 +202,8 @@
     "forQuery": "for \"{query}\"",
     "inCategory": "in {category}",
     "noToolsFound": "No tools found",
-    "description": "Free, private, browser-based PDF tools for converting, merging, splitting, and compressing PDFs online. No signup required.",
-    "categoriesIntro": "Browse free PDF editing and conversion tools by functional category:"
+    "description": "Browser-based PDF tools for converting, merging, splitting, and compressing PDF files. Files are processed locally in your browser.",
+    "categoriesIntro": "Browse PDF editing and conversion tools by functional category:"
   },
   "faqPage": {
     "title": "Frequently Asked Questions",
@@ -223,11 +224,11 @@
       "general": {
         "whatIs": {
           "question": "What is PDFkoi?",
-          "answer": "PDFkoi is a free, private, browser-based PDF toolkit that runs entirely in your browser. It offers 95+ PDF tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server."
+          "answer": "PDFkoi is a browser-based PDF toolkit that runs entirely in your browser. It offers 95+ PDF tools for editing, converting, merging, splitting, and securing PDF files without uploading them to any server."
         },
         "isFree": {
           "question": "Is PDFkoi really free?",
-          "answer": "Yes, PDFkoi is completely free to use. There are no hidden costs, no premium tiers, and no registration required. All features are available to everyone."
+          "answer": "Yes, PDFkoi is free to use. No registration is required and all features are available without payment."
         },
         "account": {
           "question": "Do I need to create an account?",
@@ -306,7 +307,7 @@
     "description": "{brand} offers free, private, browser-based PDF tools. With {count}+ tools, you can edit, convert, merge, split, and secure your PDF files without uploading them to a server.",
     "mission": {
       "title": "Our Mission",
-      "p1": "We believe that everyone should have access to powerful PDF tools without compromising their privacy or paying expensive subscription fees. That's why we created {brand} – a comprehensive PDF toolkit that puts your privacy first.",
+      "p1": "We believe everyone should have access to practical PDF tools without compromising privacy or paying subscription fees. That's why we created {brand} — a browser-based PDF toolkit that keeps your files on your device.",
       "p2": "Unlike traditional PDF services that require you to upload your files to remote servers, {brand} processes everything locally in your browser. Your sensitive documents never leave your device, giving you complete control over your data.",
       "p3": "Whether you're a student, professional, or casual user, {brand} provides all the tools you need to work with PDFs efficiently and securely."
     },
@@ -318,7 +319,7 @@
       },
       "fast": {
         "title": "Fast & Efficient",
-        "description": "Powered by modern web technologies, PDFkoi delivers lightning-fast PDF processing without the need for uploads or downloads."
+        "description": "Powered by modern web technologies, PDFkoi delivers responsive PDF processing without uploading files to a server."
       },
       "accessible": {
         "title": "Accessible Everywhere",
@@ -326,7 +327,7 @@
       },
       "free": {
         "title": "Free Forever",
-        "description": "PDFkoi is completely free to use with no hidden costs, no registration required, and no limits on usage."
+        "description": "PDFkoi is free to use. No registration is required and there are no usage limits."
       },
       "openSource": {
         "title": "Open Source",
@@ -339,7 +340,7 @@
     },
     "technology": {
       "title": "Built with Modern Technology",
-      "description": "{brand} is built using cutting-edge web technologies to ensure the best possible experience:",
+      "description": "{brand} is built with modern web technologies:",
       "list": {
         "nextjs": "<strong1>Next.js</strong1> - For fast, SEO-friendly page rendering",
         "wasm": "<strong1>WebAssembly</strong1> - For near-native PDF processing performance",
@@ -488,7 +489,7 @@
       "browserSafety": {
         "eyebrow": "Privacy-first workflow",
         "heading": "Why Browser-Based PDF Tools Are Safer",
-        "body": "Many online PDF tools ask you to upload files to a remote server before you can merge, split, compress, or convert them. PDFkoi works differently. Your files are processed in your browser, which makes it a better fit for contracts, resumes, forms, IDs, scans, and other documents you may not want to send elsewhere. If you want a faster workflow with no signup and more control over your files, browser-based PDF processing is often the simpler choice."
+        "body": "Many online PDF tools ask you to upload files to a remote server before you can merge, split, compress, or convert them. PDFkoi works differently. Your files are processed in your browser, which makes it a better fit for contracts, resumes, forms, IDs, scans, and other documents you may not want to send elsewhere. If you want a simpler workflow with more control over your files, browser-based PDF processing avoids the upload step."
       },
       "everydayTasks": {
         "eyebrow": "Search-friendly coverage",

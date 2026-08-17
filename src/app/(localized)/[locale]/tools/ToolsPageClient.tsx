@@ -132,13 +132,13 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={t('tools.search.placeholder')}
-                    className="w-full pl-12 pr-12 py-3.5 text-base rounded-[var(--radius-lg)] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-elevated))] text-[hsl(var(--color-foreground))] placeholder:text-[hsl(var(--color-text-tertiary))] shadow-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-primary)/0.2)] focus:border-[hsl(var(--color-primary))] transition-all"
+                    className="w-full pl-12 pr-12 py-3.5 text-base rounded-[var(--radius-lg)] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-elevated))] text-[hsl(var(--color-foreground))] placeholder:text-[hsl(var(--color-text-tertiary))] shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))] focus-visible:border-[hsl(var(--color-primary))] transition-all"
                     aria-label="Search tools"
                   />
                   {searchQuery && (
                     <button
                       onClick={handleClearSearch}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 hover:bg-[hsl(var(--color-muted))] rounded-full transition-colors"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 p-1.5 hover:bg-[hsl(var(--color-muted))] rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]"
                       aria-label="Clear search"
                     >
                       <X className="h-4 w-4 text-[hsl(var(--color-text-tertiary))]" aria-hidden="true" />
@@ -179,7 +179,7 @@ export default function ToolsPageClient({ locale, localizedToolContent }: ToolsP
                     onClick={() => setSelectedCategory(cat.value)}
                     aria-pressed={selectedCategory === cat.value}
                     className={`
-                      px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-1.5
+                      px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]
                       ${selectedCategory === cat.value
                         ? cat.value === 'favorites'
                           ? 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300'

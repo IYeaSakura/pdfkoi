@@ -123,6 +123,18 @@
   --color-primary-foreground: 222 47% 11%;
   --color-primary-hover: 219 100% 76%;
 
+  /* Primary scale - dark mode (reversed, low saturation) */
+  --color-primary-50: 222 47% 18%;
+  --color-primary-100: 222 47% 22%;
+  --color-primary-200: 222 47% 28%;
+  --color-primary-300: 222 47% 38%;
+  --color-primary-400: 219 60% 52%;
+  --color-primary-500: 219 80% 62%;
+  --color-primary-600: 219 100% 72%;
+  --color-primary-700: 219 100% 78%;
+  --color-primary-800: 219 100% 86%;
+  --color-primary-900: 219 100% 92%;
+
   --color-secondary: 217 33% 13%;
   --color-secondary-foreground: 210 40% 98%;
   --color-secondary-hover: 217 33% 18%;
@@ -281,14 +293,6 @@ body {
   transition-timing-function: var(--ease-press);
 }
 
-.interactive-enter {
-  animation: interactive-enter var(--motion-duration-enter) var(--ease-emphasized);
-}
-
-.interactive-exit {
-  animation: interactive-exit var(--motion-duration-exit) var(--ease-standard);
-}
-
 /* Elevated surface card utility */
 .glass-card {
   background: hsl(var(--color-elevated));
@@ -299,53 +303,6 @@ body {
 .dark .glass-card {
   background: hsl(var(--color-elevated));
   border: 1px solid hsl(var(--color-border) / 0.5);
-}
-
-/* Magnetic subtle hover */
-.interactive-lift {
-  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
-}
-
-.interactive-lift:hover {
-  transform: translateY(var(--lift-distance-md)) scale(1.01);
-}
-
-/* Micro animations */
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes pulse-soft {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.04); opacity: 0.85; }
-}
-
-@keyframes interactive-enter {
-  0% {
-    opacity: 0;
-    transform: translateY(6px) scale(0.99);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes interactive-exit {
-  0% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(4px) scale(0.99);
-  }
-}
-
-.animate-pulse-soft {
-  animation: pulse-soft 2.4s ease-in-out infinite;
 }
 
 /* Screen reader only utility */

@@ -17,7 +17,6 @@ export {
 export { Modal, type ModalProps } from './Modal';
 export { Tabs, type TabsProps, type Tab } from './Tabs';
 export { OptimizedImage, IMAGE_SIZES, type OptimizedImageProps } from './OptimizedImage';
-export { CircularProgress, type CircularProgressProps } from './CircularProgress';
 
 // Form Components - Requirements: 9.5
 export {

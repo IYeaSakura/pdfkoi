@@ -171,14 +171,14 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                     onFocus={() => setIsSearchFocused(true)}
                     onBlur={() => setTimeout(() => setIsSearchFocused(false), 150)}
                     placeholder={t('tools.search.placeholder')}
-                    className="w-full pl-11 pr-10 py-3 text-base rounded-[var(--radius-lg)] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-elevated))] text-[hsl(var(--color-foreground))] placeholder:text-[hsl(var(--color-text-tertiary))] shadow-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-primary)/0.2)] focus:border-[hsl(var(--color-primary))] transition-all"
+                    className="w-full pl-11 pr-10 py-3 text-base rounded-[var(--radius-lg)] border border-[hsl(var(--color-border))] bg-[hsl(var(--color-elevated))] text-[hsl(var(--color-foreground))] placeholder:text-[hsl(var(--color-text-tertiary))] shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))] focus-visible:border-[hsl(var(--color-primary))] transition-all"
                     aria-label="Search tools"
                     autoComplete="off"
                   />
                   {searchQuery && (
                     <button
                       onClick={() => setSearchQuery('')}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 p-1 hover:bg-[hsl(var(--color-muted))] rounded-full transition-colors"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 p-1 hover:bg-[hsl(var(--color-muted))] rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]"
                       aria-label="Clear search"
                     >
                       <X className="h-4 w-4 text-[hsl(var(--color-text-tertiary))]" aria-hidden="true" />
@@ -198,7 +198,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                             <li key={result.tool.id}>
                               <button
                                 onClick={() => navigateToTool(result.tool.slug)}
-                                className="w-full px-4 py-2.5 text-left hover:bg-[hsl(var(--color-muted))] transition-colors"
+                                className="w-full px-4 py-2.5 text-left hover:bg-[hsl(var(--color-muted))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[hsl(var(--color-ring))]"
                                 role="option"
                               >
                                 <div className="font-medium text-sm text-[hsl(var(--color-foreground))]">{anchorText}</div>
@@ -339,7 +339,7 @@ export default function HomePageClient({ locale, localizedToolContent }: HomePag
                     <Link
                       key={category}
                       href={getPublicPath(`/tools/category/${category}`, locale)}
-                      className="group"
+                      className="group rounded-[var(--radius-lg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]"
                     >
                       <Card className="p-5 h-full border border-[hsl(var(--color-border))/0.6] hover:border-[hsl(var(--color-primary-300))] transition-all duration-[var(--motion-duration-hover)] hover:-translate-y-1">
                         <div className="flex items-start gap-4">

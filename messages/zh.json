@@ -1,8 +1,8 @@
 {
   "metadata": {
     "home": {
-      "title": "无需注册的在线 PDF 工具，适合处理敏感文档 | PDFkoi",
-      "description": "免费在线 PDF 工具，无需注册即可处理合并、拆分、压缩、图片转 PDF 和 PDF 转 Word 等常见任务，适合合同、证件、简历等敏感文档的整理与发送前处理。",
+      "title": "PDF 工具 | PDFkoi",
+      "description": "在线 PDF 工具，可直接在浏览器中处理合并、拆分、压缩、图片转 PDF 和 PDF 转 Word 等常见任务，适合合同、证件、简历等敏感文档的整理与发送前处理。",
       "keywords": {
         "k1": "无需注册 PDF 工具",
         "k2": "敏感文档 PDF 处理",
@@ -13,12 +13,12 @@
       }
     },
     "tools": {
-      "title": "免费、私密、基于浏览器的 PDF 工具 | PDFkoi",
-      "description": "免费、私密、基于浏览器的 PDF 工具，支持在线转换、合并、拆分和压缩 PDF，无需注册。"
+      "title": "PDF 工具 | PDFkoi",
+      "description": "基于浏览器的 PDF 工具，支持转换、合并、拆分和压缩 PDF。文件在浏览器中本地处理。"
     },
     "about": {
       "title": "关于我们",
-      "description": "了解 PDFkoi 及其免费、私密、基于浏览器的 PDF 工具。所有处理都在您的浏览器中完成。"
+      "description": "了解 PDFkoi 及其基于浏览器的 PDF 工具。所有处理都在您的浏览器中完成。"
     },
     "faq": {
       "title": "常见问题",
@@ -34,7 +34,7 @@
     },
     "terms": {
       "title": "服务条款",
-      "description": "PDFkoi 服务条款。阅读我们的使用条款和条件，了解如何使用我们的免费 PDF 工具。"
+      "description": "PDFkoi 服务条款。阅读我们的使用条款和条件，了解如何使用我们的 PDF 工具。"
     },
     "keywords": {
       "pdfTools": "PDF 工具",
@@ -48,7 +48,7 @@
   },
   "common": {
     "brand": "PDFkoi",
-    "tagline": "免费、私密、基于浏览器的 PDF 工具",
+    "tagline": "基于浏览器的 PDF 工具",
     "navigation": {
       "home": "首页",
       "tools": "工具",
@@ -111,7 +111,7 @@
     "footer": {
       "footer": "© 2025 PDFkoi. 保留所有权利。",
       "copyright": "© {year} PDFkoi. 保留所有权利。",
-      "privacyBadge": "100% 私密 - 文件永不离开您的设备",
+      "privacyBadge": "文件在浏览器中处理，不离开您的设备",
       "madeWith": "Made with <Heart /> and <Nextjs />"
     },
     "recentFiles": {
@@ -190,7 +190,7 @@
     }
   },
   "toolsPage": {
-    "title": "免费、私密、基于浏览器的 PDF 工具",
+    "title": "PDF 工具",
     "subtitle": "探索 {count}+ 款 PDF 工具，支持合并、拆分、转换等操作。",
     "filters": "筛选",
     "allTools": "所有工具",
@@ -201,8 +201,8 @@
     "forQuery": "搜索 \"{query}\"",
     "inCategory": "分类：{category}",
     "noToolsFound": "未找到工具",
-    "description": "免费、私密、基于浏览器的 PDF 工具，支持在线转换、合并、拆分和压缩 PDF，无需注册。",
-    "categoriesIntro": "按功能类别浏览免费的 PDF 编辑与转换工具："
+    "description": "基于浏览器的 PDF 工具，支持转换、合并、拆分和压缩 PDF。文件在浏览器中本地处理。",
+    "categoriesIntro": "按功能类别浏览 PDF 编辑与转换工具："
   },
   "faqPage": {
     "title": "常见问题",
@@ -223,11 +223,11 @@
       "general": {
         "whatIs": {
           "question": "PDFkoi 是什么？",
-          "answer": "PDFkoi 是一个免费、私密、基于浏览器的 PDF 工具集，完全在您的浏览器中运行。它提供 95+ 款 PDF 工具，可用于编辑、转换、合并、拆分和保护 PDF 文件，无需上传到任何服务器。"
+          "answer": "PDFkoi 是一个基于浏览器的 PDF 工具集，完全在您的浏览器中运行。它提供 95+ 款 PDF 工具，可用于编辑、转换、合并、拆分和保护 PDF 文件，无需上传到任何服务器。"
         },
         "isFree": {
           "question": "PDFkoi 真的免费吗？",
-          "answer": "是的，PDFkoi 完全免费使用。没有隐藏费用，没有高级会员，也无需注册。所有功能对每个人开放。"
+          "answer": "是的，PDFkoi 免费使用。无需注册，所有功能均可免费使用。"
         },
         "account": {
           "question": "我需要创建账户吗？",
@@ -303,10 +303,10 @@
   },
   "aboutPage": {
     "title": "关于 {brand}",
-    "description": "{brand} 提供免费、私密、基于浏览器的 PDF 工具。借助 {count}+ 款工具，您可以在无需上传到服务器的情况下编辑、转换、合并、拆分和保护 PDF 文件。",
+    "description": "{brand} 提供基于浏览器的 PDF 工具。借助 {count}+ 款工具，您可以在无需上传到服务器的情况下编辑、转换、合并、拆分和保护 PDF 文件。",
     "mission": {
       "title": "我们的使命",
-      "p1": "我们相信，每个人都应该能够使用强大的 PDF 工具，而无需牺牲隐私或支付昂贵的订阅费用。这就是为什么我们创建了 {brand} —— 一个将您的隐私放在首位的综合 PDF 工具包。",
+      "p1": "我们相信，每个人都应该能够使用实用的 PDF 工具，而无需牺牲隐私或支付订阅费用。这就是为什么我们创建了 {brand} —— 一个基于浏览器、将文件保留在您设备上的 PDF 工具包。",
       "p2": "与要求您将文件上传到远程服务器的传统 PDF 服务不同，{brand} 在您的浏览器中本地处理所有内容。您的敏感文档从未离开您的设备，让您完全控制您的数据。",
       "p3": "无论您是学生、专业人士还是普通用户，{brand} 都为您提供高效、安全地处理 PDF 所需的所有工具。"
     },
@@ -318,15 +318,15 @@
       },
       "fast": {
         "title": "快速高效",
-        "description": "由现代 Web 技术驱动，PDFkoi 提供闪电般的 PDF 处理速度，无需上传或下载。"
+        "description": "由现代 Web 技术驱动，PDFkoi 提供响应迅速的 PDF 处理，无需上传到服务器。"
       },
       "accessible": {
         "title": "随处可用",
         "description": "提供 9 种语言版本，可在任何带有现代浏览器的设备上工作。无需安装。"
       },
       "free": {
-        "title": "永久免费",
-        "description": "PDFkoi 完全免费使用，没有隐藏费用，无需注册，也不限制使用次数。"
+        "title": "免费使用",
+        "description": "PDFkoi 免费使用。无需注册，也没有使用次数限制。"
       },
       "openSource": {
         "title": "开源透明",
@@ -339,7 +339,7 @@
     },
     "technology": {
       "title": "采用现代技术构建",
-      "description": "{brand} 采用尖端 Web 技术构建，以确保最佳体验：",
+      "description": "{brand} 使用现代 Web 技术构建：",
       "list": {
         "nextjs": "<strong1>Next.js</strong1> - 用于快速、SEO友好的页面渲染",
         "wasm": "<strong1>WebAssembly</strong1> - 提供近乎原生的 PDF 处理性能",
@@ -445,21 +445,21 @@
   },
   "home": {
     "hero": {
-      "title": "无需注册的在线 PDF 工具",
-      "highlight": "无需注册，直接上传文件就能用",
+      "title": "在线 PDF 工具",
+      "highlight": "直接在浏览器中处理文件",
       "subtitle": "适合处理合同、证件、简历等敏感文档",
-      "description": "免费在线处理 PDF，直接完成合并、拆分、压缩、图片转 PDF 和 PDF 转 Word 等常见任务，方便在发送或提交前先整理好文件。",
+      "description": "在线处理 PDF，直接完成合并、拆分、压缩、图片转 PDF 和 PDF 转 Word 等常见任务，方便在发送或提交前先整理好文件。",
       "useCases": "适合合同、证件、简历、报价单、申请材料等提交前整理。",
       "cta": "开始使用"
     },
     "features": {
       "privacy": {
-        "title": "100%私密",
+        "title": "浏览器本地处理",
         "description": "文件只在你的浏览器里处理，不上传服务器，适合合同、证件和工作资料。"
       },
       "free": {
-        "title": "完全免费",
-        "description": "打开就能用，不用注册，也没有试用次数和隐藏收费。"
+        "title": "免费使用",
+        "description": "打开即可使用，无需注册。"
       },
       "powerful": {
         "title": "常用需求都能处理",
@@ -503,7 +503,7 @@
       "browserSafety": {
         "eyebrow": "以隐私为先的工作流",
         "heading": "为什么浏览器内 PDF 工具更安全",
-        "body": "很多在线 PDF 工具会要求你先把文件上传到远程服务器，才能进行合并、拆分、压缩或转换。PDFkoi 的方式不同。你的文件会直接在浏览器中处理，这通常更适合合同、简历、表单、证件、扫描件以及其他你不想发送到外部服务器的文档。如果你想要更快的流程、无需注册，并且更好地掌控文件处理方式，那么在浏览器中处理 PDF 往往是更简单的选择。"
+        "body": "很多在线 PDF 工具会要求你先把文件上传到远程服务器，才能进行合并、拆分、压缩或转换。PDFkoi 的方式不同。你的文件会直接在浏览器中处理，这通常更适合合同、简历、表单、证件、扫描件以及其他你不想发送到外部服务器的文档。如果你想要更简单的流程，并且更好地掌控文件处理方式，那么在浏览器中处理 PDF 可以避免上传步骤。"
       },
       "everydayTasks": {
         "eyebrow": "更贴近搜索需求的覆盖",

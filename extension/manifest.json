@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "PDFkoi - PDF Tools",
     "version": "1.0.0",
-    "description": "Quick access to 72+ free online PDF tools. Merge, split, compress, convert PDFs - all in your browser.",
+    "description": "Quick access to PDF tools for merging, splitting, compressing, and converting PDFs in your browser.",
     "author": "PDFkoi Team",
     "homepage_url": "https://PDFkoi.gitu.net",
     "icons": {

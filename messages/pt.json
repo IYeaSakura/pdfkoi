@@ -186,7 +186,7 @@
           },
           "isFree": {
             "question": "Is PDFkoi really free?",
-            "answer": "Yes, PDFkoi is completely free to use. There are no hidden costs, no premium tiers, and no registration required. All features are available to everyone."
+            "answer": "Yes, PDFkoi is free to use. No registration is required and all features are available without payment."
           },
           "account": {
             "question": "Do I need to create an account?",
@@ -265,7 +265,7 @@
       "description": "{brand} oferece ferramentas de PDF gr?tis, privadas e no navegador. Com {count}+ ferramentas, voc? pode editar, converter, mesclar, dividir e proteger arquivos PDF sem envi?-los para um servidor.",
       "mission": {
         "title": "Our Mission",
-        "p1": "We believe that everyone should have access to powerful PDF tools without compromising their privacy or paying expensive subscription fees. That's why we created {brand} – a comprehensive PDF toolkit that puts your privacy first.",
+        "p1": "We believe everyone should have access to practical PDF tools without compromising privacy or paying subscription fees. That's why we created {brand} — a browser-based PDF toolkit that keeps your files on your device.",
         "p2": "Unlike traditional PDF services that require you to upload your files to remote servers, {brand} processes everything locally in your browser. Your sensitive documents never leave your device, giving you complete control over your data.",
         "p3": "Whether you're a student, professional, or casual user, {brand} provides all the tools you need to work with PDFs efficiently and securely."
       },
@@ -277,7 +277,7 @@
         },
         "fast": {
           "title": "Fast & Efficient",
-          "description": "Powered by modern web technologies, PDFkoi delivers lightning-fast PDF processing without the need for uploads or downloads."
+          "description": "Powered by modern web technologies, PDFkoi delivers responsive PDF processing without uploading files to a server."
         },
         "accessible": {
           "title": "Accessible Everywhere",
@@ -285,7 +285,7 @@
         },
         "free": {
           "title": "Free Forever",
-          "description": "PDFkoi is completely free to use with no hidden costs, no registration required, and no limits on usage."
+          "description": "PDFkoi is free to use. No registration is required and there are no usage limits."
         },
         "openSource": {
           "title": "Open Source",
@@ -298,7 +298,7 @@
       },
       "technology": {
         "title": "Built with Modern Technology",
-        "description": "{brand} is built using cutting-edge web technologies to ensure the best possible experience:",
+        "description": "{brand} is built with modern web technologies:",
         "list": {
           "nextjs": "<strong1>Next.js</strong1> - For fast, SEO-friendly page rendering",
           "wasm": "<strong1>WebAssembly</strong1> - For near-native PDF processing performance",

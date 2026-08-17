@@ -223,7 +223,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
                 href={item.href}
                 title={item.label}
                 aria-label={item.label}
-                className="rounded-lg px-3 py-1.5 text-sm font-medium text-[hsl(var(--color-muted-foreground))] transition-colors hover:bg-[hsl(var(--color-muted))] hover:text-[hsl(var(--color-foreground))]"
+                className="rounded-lg px-3 py-1.5 text-sm font-medium text-[hsl(var(--color-muted-foreground))] transition-colors duration-[var(--motion-duration-hover)] ease-[var(--ease-standard)] hover:bg-[hsl(var(--color-muted))] hover:text-[hsl(var(--color-foreground))] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]"
               >
                 {item.label}
               </Link>
@@ -248,7 +248,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
                         onChange={(e) => setSearchQuery(e.target.value)}
                         onKeyDown={handleKeyDown}
                         placeholder={t('search.placeholder') || 'Search tools...'}
-                        className="w-full h-full pl-9 pr-9 py-0 text-sm rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-background))] shadow-md focus:outline-none focus:ring-2 focus:ring-[hsl(var(--color-primary))]"
+                        className="w-full h-full pl-9 pr-9 py-0 text-sm rounded-full border border-[hsl(var(--color-border))] bg-[hsl(var(--color-background))] shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]"
                         aria-label="Search tools"
                         autoComplete="off"
                       />
@@ -279,7 +279,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
                                     onClick={() => navigateToTool(result.tool.slug)}
                                     onMouseEnter={() => setSelectedIndex(index)}
                                     className={`
-                                      w-full px-4 py-2.5 text-left flex items-center gap-3 transition-colors
+                                      w-full px-4 py-2.5 text-left flex items-center gap-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[hsl(var(--color-ring))]
                                       ${index === selectedIndex
                                         ? 'bg-[hsl(var(--color-primary))/0.1] text-[hsl(var(--color-primary))]'
                                         : 'hover:bg-[hsl(var(--color-muted))] text-[hsl(var(--color-foreground))]'
@@ -368,7 +368,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, showSearch = true }) => 
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="block px-3 py-2 text-sm font-medium text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))] rounded-lg transition-colors"
+                    className="block px-3 py-2 text-sm font-medium text-[hsl(var(--color-foreground))] hover:bg-[hsl(var(--color-muted))] rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}

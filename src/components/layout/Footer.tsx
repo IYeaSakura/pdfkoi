@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
           <div className="flex flex-col gap-5">
             <Link
               href={homePath}
-              className="group flex items-center gap-2.5 text-xl font-bold text-[hsl(var(--color-foreground))]"
+              className="group flex items-center gap-2.5 text-xl font-bold text-[hsl(var(--color-foreground))] rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]"
               aria-label={`${t('brand')} - ${t('navigation.home')}`}
             >
               <Image
@@ -70,14 +70,14 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
               <a
                 href="https://github.com/pdfkoi/pdfkoi"
                 aria-label="GitHub"
-                className="p-2 rounded-full bg-[hsl(var(--color-muted))] text-[hsl(var(--color-muted-foreground))] hover:bg-[hsl(var(--color-primary))] hover:text-white transition-colors"
+                className="p-2 rounded-full bg-[hsl(var(--color-muted))] text-[hsl(var(--color-muted-foreground))] hover:bg-[hsl(var(--color-primary))] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]"
               >
                 <Github className="w-4 h-4" />
               </a>
               <Link
                 href={getPublicPath('/contact', locale)}
                 aria-label={t('navigation.contact')}
-                className="p-2 rounded-full bg-[hsl(var(--color-muted))] text-[hsl(var(--color-muted-foreground))] hover:bg-[hsl(var(--color-primary))] hover:text-white transition-colors"
+                className="p-2 rounded-full bg-[hsl(var(--color-muted))] text-[hsl(var(--color-muted-foreground))] hover:bg-[hsl(var(--color-primary))] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]"
               >
                 <Mail className="w-4 h-4" />
               </Link>
@@ -94,7 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-primary))] transition-colors flex items-center gap-2 group"
+                    className="text-sm text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-primary))] transition-colors flex items-center gap-2 group rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]"
                   >
                     <span className="w-1 h-1 rounded-full bg-[hsl(var(--color-muted-foreground))] group-hover:bg-[hsl(var(--color-primary))] transition-colors" />
                     <span>{link.label}</span>
@@ -114,9 +114,16 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
             &copy; {currentYear} {t('brand')}. {t('footer.copyright', { year: '' }).replace(/^\d{4}\s*/, '')}
           </p>
           <div className="flex items-center gap-6">
-            <Link href={getPublicPath('/terms', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]">Terms</Link>
-            <Link href={getPublicPath('/privacy', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))]">Privacy</Link>
+            <Link href={getPublicPath('/terms', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))] rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]">Terms</Link>
+            <Link href={getPublicPath('/privacy', locale)} className="text-xs text-[hsl(var(--color-muted-foreground))] hover:text-[hsl(var(--color-foreground))] rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))]">Privacy</Link>
           </div>
+        </div>
+
+        {/* Filing info - always Chinese regardless of locale */}
+        <div className="pt-4 text-center">
+          <p className="text-xs text-[hsl(var(--color-muted-foreground))]">
+            本站已按中国法律要求备案，备案号待补充
+          </p>
         </div>
       </div>
     </footer>

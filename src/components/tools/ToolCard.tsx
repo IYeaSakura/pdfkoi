@@ -60,7 +60,7 @@ export function ToolCard({ tool, locale, className = '', localizedContent }: Too
   return (
     <Link
       href={toolUrl}
-      className={`block focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 rounded-[var(--radius-lg)] group ${className}`}
+      className={`block focus:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--color-ring))] focus-visible:ring-offset-2 focus-visible:ring-offset-[hsl(var(--color-background))] rounded-[var(--radius-lg)] group ${className}`}
       data-testid="tool-card"
     >
       <Card
@@ -104,7 +104,7 @@ export function ToolCard({ tool, locale, className = '', localizedContent }: Too
               {categoryName}
             </span>
             <span className="flex items-center gap-1 text-[hsl(var(--color-primary))] font-medium">
-              {t('common.buttons.next') || 'Try now'}
+              {t('common.buttons.open') || 'Open'}
               <ArrowUpRight className="w-3.5 h-3.5" />
             </span>
           </div>

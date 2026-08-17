@@ -20,7 +20,7 @@ export function LongTailLandingPage({ locale, content }: LongTailLandingPageProp
       <Header locale={locale} />
 
       <main className="flex-1">
-        <section className="bg-gradient-to-br from-[hsl(var(--color-primary)/0.1)] via-[hsl(var(--color-background))] to-[hsl(var(--color-secondary)/0.08)] py-16 md:py-20">
+        <section className="py-16 md:py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[hsl(var(--color-primary))] mb-4">

@@ -63,7 +63,7 @@ export default function CookiesPageClient({ locale }: CookiesPageClientProps) {
       <Header locale={locale} />
 
       <main className="flex-1">
-        <section className="bg-gradient-to-br from-[hsl(var(--color-primary)/0.08)] via-[hsl(var(--color-background))] to-[hsl(var(--color-secondary)/0.1)] py-16">
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber-100 mb-6">

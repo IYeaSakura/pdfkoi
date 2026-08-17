@@ -492,7 +492,7 @@ export function PDFToImageTool({ className = '', outputFormat }: PDFToImageToolP
 
             {/* Layout Preview */}
             {layoutPreset !== '1x1' && (
-              <div className="p-4 rounded-xl bg-gradient-to-br from-[hsl(var(--color-muted))] to-[hsl(var(--color-background))] border border-[hsl(var(--color-border))]">
+              <div className="p-4 rounded-xl bg-[hsl(var(--color-muted)/0.5)] border border-[hsl(var(--color-border))]">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-2 h-2 rounded-full bg-[hsl(var(--color-primary))]"></div>
                   <h4 className="text-sm font-semibold text-[hsl(var(--color-foreground))]">
@@ -516,7 +516,7 @@ export function PDFToImageTool({ className = '', outputFormat }: PDFToImageToolP
                       {Array.from({ length: (layoutPreset === 'custom' ? customColumns * customRows : parseInt(layoutPreset.split('x')[0]) * parseInt(layoutPreset.split('x')[1])) }).map((_, idx) => (
                         <div
                           key={idx}
-                          className="bg-gradient-to-br from-[hsl(var(--color-primary)/0.15)] to-[hsl(var(--color-primary)/0.05)] border border-[hsl(var(--color-primary)/0.2)] rounded flex items-center justify-center text-xs font-bold text-[hsl(var(--color-primary))]"
+                          className="bg-[hsl(var(--color-primary)/0.1)] border border-[hsl(var(--color-primary)/0.2)] rounded flex items-center justify-center text-xs font-bold text-[hsl(var(--color-primary))]"
                         >
                           {idx + 1}
                         </div>

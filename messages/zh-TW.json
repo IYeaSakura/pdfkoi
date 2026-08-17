@@ -1,8 +1,8 @@
 {
   "metadata": {
     "home": {
-      "title": "無需註冊的線上 PDF 工具，適合處理敏感文件 | PDFkoi",
-      "description": "免費線上 PDF 工具，無需註冊即可處理合併、拆分、壓縮、圖片轉 PDF 與 PDF 轉 Word 等常見任務，適合合約、證件、履歷等敏感文件的整理與傳送前處理。",
+      "title": "PDF 工具 | PDFkoi",
+      "description": "線上 PDF 工具，可直接在瀏覽器中處理合併、拆分、壓縮、圖片轉 PDF 與 PDF 轉 Word 等常見任務，適合合約、證件、履歷等敏感文件的整理與傳送前處理。",
       "keywords": {
         "k1": "無需註冊 PDF 工具",
         "k2": "敏感文件 PDF 處理",
@@ -13,12 +13,12 @@
       }
     },
     "tools": {
-      "title": "免費、私密、基於瀏覽器的 PDF 工具 | PDFkoi",
-      "description": "免費、私密、基於瀏覽器的 PDF 工具，支援線上轉換、合併、拆分與壓縮 PDF，無需註冊。"
+      "title": "PDF 工具 | PDFkoi",
+      "description": "基於瀏覽器的 PDF 工具，支援轉換、合併、拆分與壓縮 PDF。檔案在瀏覽器中本地處理。"
     },
     "about": {
       "title": "關於我們",
-      "description": "了解 PDFkoi 及其免費、私密、基於瀏覽器的 PDF 工具。所有處理都在您的瀏覽器中完成。"
+      "description": "了解 PDFkoi 及其基於瀏覽器的 PDF 工具。所有處理都在您的瀏覽器中完成。"
     },
     "faq": {
       "title": "常見問題",
@@ -43,12 +43,12 @@
     },
     "terms": {
       "title": "服務條款",
-      "description": "PDFkoi 服務條款。閱讀我們的使用條款和條件，了解如何使用我們的免費 PDF 工具。"
+      "description": "PDFkoi 服務條款。閱讀我們的使用條款和條件，了解如何使用我們的 PDF 工具。"
     }
   },
   "common": {
     "brand": "PDFkoi",
-    "tagline": "免費、私密、基於瀏覽器的 PDF 工具",
+    "tagline": "基於瀏覽器的 PDF 工具",
     "navigation": {
       "home": "首頁",
       "tools": "工具",
@@ -110,7 +110,7 @@
     "footer": {
       "footer": "© 2025 PDFkoi. 保留所有權利。",
       "copyright": "© {year} PDFkoi. 保留所有權利。",
-      "privacyBadge": "100% 私密 - 檔案永不離開您的裝置",
+      "privacyBadge": "檔案在瀏覽器中處理，不離開您的裝置",
       "madeWith": "Made with <Heart /> and <Nextjs />"
     },
     "recentFiles": {
@@ -189,7 +189,7 @@
     }
   },
   "toolsPage": {
-    "title": "免費、私密、基於瀏覽器的 PDF 工具",
+    "title": "PDF 工具",
     "subtitle": "探索 {count}+ 款 PDF 工具，支援合併、拆分、轉換等操作。",
     "filters": "篩選",
     "allTools": "所有工具",
@@ -200,8 +200,8 @@
     "forQuery": "搜尋 \"{query}\"",
     "inCategory": "分類：{category}",
     "noToolsFound": "未找到工具",
-    "description": "免費、私密、基於瀏覽器的 PDF 工具，支援線上轉換、合併、拆分與壓縮 PDF，無需註冊。",
-    "categoriesIntro": "按功能類別瀏覽免費的 PDF 編輯與轉換工具："
+    "description": "基於瀏覽器的 PDF 工具，支援轉換、合併、拆分與壓縮 PDF。檔案在瀏覽器中本地處理。",
+    "categoriesIntro": "按功能類別瀏覽 PDF 編輯與轉換工具："
   },
   "faqPage": {
     "title": "常見問題",
@@ -222,11 +222,11 @@
       "general": {
         "whatIs": {
           "question": "PDFkoi 是什麼？",
-          "answer": "PDFkoi 是一套免費、私密、基於瀏覽器的 PDF 工具集，完全在您的瀏覽器中執行。它提供 95+ 款 PDF 工具，可用於編輯、轉換、合併、拆分與保護 PDF 檔案，無需上傳到任何伺服器。"
+          "answer": "PDFkoi 是一套基於瀏覽器的 PDF 工具集，完全在您的瀏覽器中執行。它提供 95+ 款 PDF 工具，可用於編輯、轉換、合併、拆分與保護 PDF 檔案，無需上傳到任何伺服器。"
         },
         "isFree": {
           "question": "PDFkoi 真的免費嗎？",
-          "answer": "是的，PDFkoi 完全免費使用。沒有隱藏費用，沒有高階會員，也無需註冊。所有功能對每個人開放。"
+          "answer": "是的，PDFkoi 免費使用。無需註冊，所有功能均可免費使用。"
         },
         "account": {
           "question": "我需要建立賬戶嗎？",
@@ -302,10 +302,10 @@
   },
   "aboutPage": {
     "title": "關於 {brand}",
-    "description": "{brand} 提供免費、私密、基於瀏覽器的 PDF 工具。透過 {count}+ 款工具，您可以在無需上傳到伺服器的情況下編輯、轉換、合併、拆分與保護 PDF 檔案。",
+    "description": "{brand} 提供基於瀏覽器的 PDF 工具。透過 {count}+ 款工具，您可以在無需上傳到伺服器的情況下編輯、轉換、合併、拆分與保護 PDF 檔案。",
     "mission": {
       "title": "我們的使命",
-      "p1": "我們相信，每個人都應該能夠使用強大的 PDF 工具，而無需犧牲隱私或支付昂貴的訂閱費用。這就是為什麼我們建立了 {brand} —— 一個將您的隱私放在首位的綜合 PDF 工具包。",
+      "p1": "我們相信，每個人都應該能夠使用實用的 PDF 工具，而無需犧牲隱私或支付訂閱費用。這就是為什麼我們建立了 {brand} —— 一個基於瀏覽器、將檔案保留在您裝置上的 PDF 工具包。",
       "p2": "與要求您將檔案上傳到遠端伺服器的傳統 PDF 服務不同，{brand} 在您的瀏覽器中本地處理所有內容。您的敏感文件從未離開您的裝置，讓您完全控制您的資料。",
       "p3": "無論您是學生、專業人士還是普通使用者，{brand} 都為您提供高效、安全地處理 PDF 所需的所有工具。"
     },
@@ -317,15 +317,15 @@
       },
       "fast": {
         "title": "快速高效",
-        "description": "由現代 Web 技術驅動，PDFkoi 提供閃電般的 PDF 處理速度，無需上傳或下載。"
+        "description": "由現代 Web 技術驅動，PDFkoi 提供響應迅速的 PDF 處理，無需上傳到伺服器。"
       },
       "accessible": {
         "title": "隨處可用",
         "description": "提供 9 種語言版本，可在任何帶有現代瀏覽器的裝置上工作。無需安裝。"
       },
       "free": {
-        "title": "永久免費",
-        "description": "PDFkoi 完全免費使用，沒有隱藏費用，無需註冊，也不限制使用次數。"
+        "title": "免費使用",
+        "description": "PDFkoi 免費使用。無需註冊，也沒有使用次數限制。"
       },
       "openSource": {
         "title": "開源透明",
@@ -338,7 +338,7 @@
     },
     "technology": {
       "title": "採用現代技術構建",
-      "description": "{brand} 採用尖端 Web 技術構建，以確保最佳體驗：",
+      "description": "{brand} 使用現代 Web 技術構建：",
       "list": {
         "nextjs": "<strong1>Next.js</strong1> - 用於快速、SEO友好的頁面渲染",
         "wasm": "<strong1>WebAssembly</strong1> - 提供近乎原生的 PDF 處理效能",
@@ -444,21 +444,21 @@
   },
   "home": {
     "hero": {
-      "title": "無需註冊的線上 PDF 工具",
-      "highlight": "無需註冊，選擇檔案後即可使用",
+      "title": "線上 PDF 工具",
+      "highlight": "直接在瀏覽器中處理檔案",
       "subtitle": "適合處理合約、證件、履歷等敏感文件",
-      "description": "免費線上處理 PDF，直接完成合併、拆分、壓縮、圖片轉 PDF 與 PDF 轉 Word 等常見任務，方便在傳送或提交前先整理好文件。",
+      "description": "線上處理 PDF，直接完成合併、拆分、壓縮、圖片轉 PDF 與 PDF 轉 Word 等常見任務，方便在傳送或提交前先整理好文件。",
       "useCases": "適合合約、證件、履歷、報價單、申請資料等提交前整理。",
       "cta": "開始使用"
     },
     "features": {
       "privacy": {
-        "title": "100%私密",
+        "title": "瀏覽器本地處理",
         "description": "檔案只會在瀏覽器內處理，不需上傳伺服器，較適合合約、證件與工作文件。"
       },
       "free": {
-        "title": "完全免費",
-        "description": "打開就能使用，無需註冊，也沒有次數限制或隱藏費用。"
+        "title": "免費使用",
+        "description": "打開即可使用，無需註冊。"
       },
       "powerful": {
         "title": "常見 PDF 任務都能處理",
@@ -502,7 +502,7 @@
       "browserSafety": {
         "eyebrow": "以隱私為優先的工作流程",
         "heading": "為什麼在瀏覽器內處理 PDF 更安全",
-        "body": "許多線上 PDF 工具會要求你先把檔案上傳到遠端伺服器，才能進行合併、分割、壓縮或轉換。PDFkoi 的做法不同。你的檔案會直接在瀏覽器中處理，通常更適合合約、履歷、表單、證件、掃描檔，以及其他你不想傳送到外部伺服器的文件。如果你想要更快的流程、免註冊，並且更能掌握檔案的處理方式，那麼在瀏覽器中處理 PDF 往往是更簡單的選擇。"
+        "body": "許多線上 PDF 工具會要求你先把檔案上傳到遠端伺服器，才能進行合併、分割、壓縮或轉換。PDFkoi 的做法不同。你的檔案會直接在瀏覽器中處理，通常更適合合約、履歷、表單、證件、掃描檔，以及其他你不想傳送到外部伺服器的文件。如果你想要更簡單的流程，並且更能掌握檔案的處理方式，那麼在瀏覽器中處理 PDF 可以避免上傳步驟。"
       },
       "everydayTasks": {
         "eyebrow": "更貼近搜尋需求的覆蓋",

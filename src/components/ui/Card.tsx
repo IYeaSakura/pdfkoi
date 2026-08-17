@@ -49,9 +49,9 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     ref
   ) => {
     const baseStyles = `
-      rounded-[var(--radius-lg)] motion-standard
+      rounded-[var(--radius-lg)]
       text-[hsl(var(--color-card-foreground))]
-      transition-shadow duration-[var(--motion-duration-hover)] [transition-timing-function:var(--ease-standard)]
+      transition-[transform,box-shadow,border-color] duration-[var(--motion-duration-hover)] ease-[var(--ease-standard)]
     `;
 
     const hoverStyles = hover
@@ -69,7 +69,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
         focus-visible:ring-2
         focus-visible:ring-[hsl(var(--color-ring))]
         focus-visible:ring-offset-2
-        focus-visible:shadow-[0_0_0_5px_hsl(var(--color-ring)/0.20)]
+        focus-visible:ring-offset-[hsl(var(--color-background))]
         active:scale-[var(--press-scale)]
       `
       : '';

@@ -96,9 +96,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       font-medium rounded-[var(--radius-md)]
       focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
       focus-visible:ring-[hsl(var(--color-ring))]
+      focus-visible:ring-offset-[hsl(var(--color-background))]
       active:scale-[var(--press-scale)]
       disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
-      transition-colors transition-transform
+      transition-[color,background-color,border-color,transform,box-shadow] duration-[var(--motion-duration-hover)] ease-[var(--ease-standard)]
     `;
 
     return (

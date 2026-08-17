@@ -740,9 +740,8 @@ export function SplitPDFTool({ className = '' }: SplitPDFToolProps) {
             )}
 
             {splitMode === 'every-page' && (
-              <div className="relative overflow-hidden p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/60 shadow-sm">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-200/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
-                <div className="relative flex items-start gap-3">
+              <div className="p-4 rounded-xl bg-blue-50 border border-blue-200/60">
+                <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
                     <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -761,9 +760,8 @@ export function SplitPDFTool({ className = '' }: SplitPDFToolProps) {
             )}
 
             {splitMode === 'visual' && (
-              <div className="relative overflow-hidden p-4 rounded-xl bg-gradient-to-r from-purple-50 to-fuchsia-50 border border-purple-200/60 shadow-sm">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-200/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
-                <div className="relative flex items-start gap-3">
+              <div className="p-4 rounded-xl bg-purple-50 border border-purple-200/60">
+                <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
                     <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
@@ -785,10 +783,8 @@ export function SplitPDFTool({ className = '' }: SplitPDFToolProps) {
               <div className="space-y-4">
                 {pdfBookmarks.length > 0 ? (
                   <>
-                    {/* Success banner with gradient */}
-                    <div className="relative overflow-hidden p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200/60 shadow-sm">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-200/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
-                      <div className="relative flex items-start gap-3">
+                    <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200/60">
+                      <div className="flex items-start gap-3">
                         <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
                           <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -807,7 +803,7 @@ export function SplitPDFTool({ className = '' }: SplitPDFToolProps) {
 
                     {/* Bookmark list with modern styling */}
                     <div className="rounded-xl border border-[hsl(var(--color-border))] overflow-hidden shadow-sm bg-[hsl(var(--color-background))]">
-                      <div className="px-4 py-3 bg-gradient-to-r from-[hsl(var(--color-muted)/0.5)] to-[hsl(var(--color-muted)/0.3)] border-b border-[hsl(var(--color-border))]">
+                      <div className="px-4 py-3 bg-[hsl(var(--color-muted)/0.4)] border-b border-[hsl(var(--color-border))]">
                         <div className="flex items-center gap-2">
                           <svg className="w-4 h-4 text-[hsl(var(--color-primary))]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
@@ -846,10 +842,8 @@ export function SplitPDFTool({ className = '' }: SplitPDFToolProps) {
                     </div>
                   </>
                 ) : (
-                  /* No bookmarks warning with modern styling */
-                  <div className="relative overflow-hidden p-4 rounded-xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/60 shadow-sm">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-200/20 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
-                    <div className="relative flex items-start gap-3">
+                  <div className="p-4 rounded-xl bg-amber-50 border border-amber-200/60">
+                    <div className="flex items-start gap-3">
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
                         <svg className="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
